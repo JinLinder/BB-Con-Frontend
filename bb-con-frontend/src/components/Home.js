@@ -11,6 +11,7 @@ export default function Home() {
     <Router>
         <div>
             <ul>
+            <li><Link to="/"> Home</Link></li>
                 <li><Link to="/login"> Log in</Link></li>
                 <li><Link to="/signup"> sign up</Link></li>
             </ul>
@@ -18,7 +19,7 @@ export default function Home() {
 
         <Switch>
             <Route exact path="/">
-                <h1>Welcom!</h1>
+                <h1>Welcome!</h1>
             </Route>
             <Route path="/login" component={Login}></Route>
             <Route path="/signup" component={Signup}></Route>
