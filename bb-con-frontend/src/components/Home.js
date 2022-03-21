@@ -4,11 +4,14 @@ import Login from './Login';
 import Signup from './Signup';
 
 export default function Home() {
-
+    const test =()=>{
+    console.log("clicked test");
+    }
   return (
     <>
     <p>Put logo here</p>
-    <Router>
+    <a href="#" onClick={test}>Log in</a>
+    {/* <Router>
         <div>
             <ul>
                 <li><Link to="/login"> Log in</Link></li>
@@ -23,7 +26,7 @@ export default function Home() {
             <Route path="/login" component={Login}></Route>
             <Route path="/signup" component={Signup}></Route>
         </Switch>
-    </Router>
+    </Router> */}
     </>
   )
 }
