@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
+import HomeAfterLogin from './HomeAfterLogin'
 const axios = require('axios')
 
 export default function Login() {
-  // const [Username, setUsername] = useState("");
-  // const [Password, setPassword] = useState("");
+
   const [login, setLogin] = useState({username:"", password:""})
   
   const handleLogin = (evt)=>{
@@ -22,6 +22,15 @@ export default function Login() {
     .then(res=>res.json())
     .then(data=>{
       console.log("data",data);
+      if(data.message===`User: ${login.username} loged in.`) {
+        console.log("if works")
+        
+        // return (
+        //   <>
+        //   <HomeAfterLogin/>
+        //   </>
+        // )
+      }
     })
     .catch((err)=>{
       console.log('err', err)
