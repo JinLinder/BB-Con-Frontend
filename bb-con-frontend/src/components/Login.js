@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import HomeAfterLogin from './Home'
 const axios = require('axios')
 
 export default function Login() {
@@ -9,8 +8,8 @@ export default function Login() {
   const [login, setLogin] = useState({username:"", password:""})
   const navigate = useNavigate()
 
+//handle login
   const handleLogin = (evt)=>{
-    
     evt.preventDefault();
     console.log(login)
   
@@ -27,18 +26,13 @@ export default function Login() {
       if(data.message===`User: ${login.username} loged in.`) {
         console.log("if works")
         navigate("/home")
-        // return (
-        //   <>
-        //   <HomeAfterLogin/>
-        //   </>
-        // )
       }
     })
     .catch((err)=>{
       console.log('err', err)
     })
   };
-
+//handle cancle button
   const handleCancle=()=>{
     navigate("/")
   }

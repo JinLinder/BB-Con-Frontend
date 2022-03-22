@@ -11,7 +11,7 @@ export default function Signup() {
   })
 
   const navigate = useNavigate()
-
+//handle signup
   const handleSignup = (evt)=>{
     evt.preventDefault();
     console.log(signup);
@@ -31,7 +31,7 @@ export default function Signup() {
         console.log('err', err)
       })
   }
-
+//handle cancle
   const handleCancle= ()=>{
       navigate("/")
   }
@@ -49,19 +49,21 @@ export default function Signup() {
           onChange={(e)=>setSignup({...signup, password: e.target.value})}
         /> <br />
         <label htmlFor="babyAge">Baby's age </label>
+        
         <select name="babyAge" id=""
           onChange={(e)=>setSignup({...signup, babyAge: e.target.value})}
         >
-          <option value="choose your baby's age"></option>
+          <option value="DEAULT" disabled>choose your baby's age</option>
           <option value="lessThan1">0-1</option>
           <option value="1-2">1-2</option>
           <option value="More than 2">More than 2</option>
         </select><br />
+        
         <label htmlFor="location">Location </label>
         <select name="location" id=""
           onChange={(e)=>setSignup({...signup, location: e.target.value})}
         >
-          <option value="Choose a location"></option>
+          <option value="DEFAULT" disabled>Choose a location</option>
           <option value="Täby">Täby</option>
           <option value="Sollentuna">Sollentuna</option>
           <option value="Solna">Solna</option>

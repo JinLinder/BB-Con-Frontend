@@ -1,13 +1,29 @@
-import React from 'react'
+import React from 'react'; 
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Home() {
+const navigate = useNavigate()
+
+
+const handleActivity =()=>{
+  console.log("this works");
+  navigate("/activityHome");
+}
+
+const handleCommunity =()=>{
+  console.log("this works");
+  navigate("/communityHome");
+
+}
+
   return (
     <div>
         <p>logo here</p>
         <p>Title here</p>
         <p>lite text?</p>
-        <button>Activity</button>
-        <button>Community</button>
+        <button onClick={handleActivity}>Activity</button>
+        <button onClick={handleCommunity}>Community</button>
     </div>
   )
 }
