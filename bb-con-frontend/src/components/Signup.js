@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Signup() {
   const [signup, setSignup]=useState({
@@ -9,28 +10,36 @@ export default function Signup() {
     location:""
   })
 
-const handleSignup = (evt)=>{
-  evt.preventDefault();
-  console.log(signup);
+  const navigate = useNavigate()
 
-  fetch("http://localhost:5000/signup", {
-    method:"POST",
-    headers: {
-      "Content-Type":"application/json",
-    },
-    body: JSON.stringify(signup)
-  })
-  .then(res=>res.json())
-    .then(data=>{
-      console.log("data",data);
+  const handleSignup = (evt)=>{
+    evt.preventDefault();
+    console.log(signup);
+
+    fetch("http://localhost:5000/signup", {
+      method:"POST",
+      headers: {
+        "Content-Type":"application/json",
+      },
+      body: JSON.stringify(signup)
     })
-    .catch((err)=>{
-      console.log('err', err)
-    })
-}
+    .then(res=>res.json())
+      .then(data=>{
+        console.log("data",data);
+      })
+      .catch((err)=>{
+        console.log('err', err)
+      })
+  }
+
+  const handleCancle= ()=>{
+      navigate("/")
+  }
+
   return (
     <div>
-      <h3>Sign up</h3>
+      <h3>Sign up</h3> 
+      <button onClick={handleCancle}>Cancle</button>
       <label htmlFor="username">Username </label> 
         <input type="text" 
           onChange={(e)=>setSignup({...signup, username: e.target.value})}
