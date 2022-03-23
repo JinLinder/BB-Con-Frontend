@@ -53,17 +53,17 @@ export default function Signup() {
         <select name="babyAge" id=""
           onChange={(e)=>setSignup({...signup, babyAge: e.target.value})}
         >
-          <option value="DEAULT" disabled>choose your baby's age</option>
-          <option value="lessThan1">0-1</option>
-          <option value="1-2">1-2</option>
-          <option value="More than 2">More than 2</option>
+          <option value="" disabled selected>choose your baby's age</option>
+          <option value="less than 1">0-1 year</option>
+          <option value="1-2">1-2 years</option>
+          <option value="more than 2">More than 2 years</option>
         </select><br />
         
         <label htmlFor="location">Location </label>
         <select name="location" id=""
           onChange={(e)=>setSignup({...signup, location: e.target.value})}
         >
-          <option value="DEFAULT" disabled>Choose a location</option>
+          <option value="" disabled selected>Choose a location</option>
           <option value="Täby">Täby</option>
           <option value="Sollentuna">Sollentuna</option>
           <option value="Solna">Solna</option>

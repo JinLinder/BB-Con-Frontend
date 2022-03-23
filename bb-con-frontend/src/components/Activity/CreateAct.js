@@ -1,8 +1,9 @@
 import React from 'react'
 import {useState} from 'react'
 
-export default function CreateActivity() {
-  const [activity, setActivity] = useState({
+
+export default function CreateAct() {
+  const [act, setAct] = useState({
     title:"",
     community:"",
     adress:"",
@@ -13,14 +14,14 @@ export default function CreateActivity() {
   //handle create
   const handleCreate = (evt)=>{
     evt.preventDefault();
-    console.log(activity);
+    console.log(act);
 
     fetch("http://localhost:5000/activity/add", {
       method:"POST",
       headers: {
         "Content-Type":"application/json",
       },
-      body: JSON.stringify(activity)
+      body: JSON.stringify(act)
     })
     .then(res=>res.json())
     .then(data=>{
@@ -36,24 +37,24 @@ export default function CreateActivity() {
       <h1>Create Activity</h1>
       <label htmlFor="">Title:</label>
       <input type="text" placeholder='Title of the activity' 
-        onChange={(e)=>setActivity({...activity, title:e.target.value})}/><br />
+        onChange={(e)=>setAct({...act, title:e.target.value})}/><br />
       <label htmlFor="">community</label>
 
       <select name="community" id=""
-        onChange={(e)=>setActivity({...activity, community:e.target.value})}>
-            <option value="DEFAULT" disabled>Select a community</option>
-            <option value="">Täby</option>
-            <option value="">Sollentuna</option>
-            <option value="">Solna</option>
+        onChange={(e)=>setAct({...act, community :e.target.value})}>
+            <option value="" disabled selected>choose your community</option>
+            <option value="Täby">Täby</option>
+            <option value="Sollentuna">Sollentuna</option>
+            <option value="Solna">Solna</option>
         </select>
 
         <input type="text" placeholder='adress' 
-        onChange={(e)=>setActivity({...activity, adress:e.target.value})}/><br />
+        onChange={(e)=>setAct({...act, adress:e.target.value})}/><br />
         <input type="date" 
-          onChange={(e)=>setActivity({...activity, time:e.target.value})}/><br />
+          onChange={(e)=>setAct({...act, time:e.target.value})}/><br />
         <label htmlFor="">Activity info</label>
       <textarea name="info" id="" cols="30" rows="10" placeholder='Write activity info here'
-        onChange={(e)=>setActivity({...activity, info:e.target.value})}></textarea> <br />
+        onChange={(e)=>setAct({...act, info:e.target.value})}></textarea> <br />
       <button onClick={handleCreate}>Create</button>
 
     </div>

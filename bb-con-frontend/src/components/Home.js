@@ -8,12 +8,12 @@ const navigate = useNavigate()
 
 const handleActivity =()=>{
   console.log("this works");
-  navigate("/activityHome");
+  navigate("/activity");
 }
 
 const handleCommunity =()=>{
   console.log("this works");
-  navigate("/communityHome");
+  navigate("/community");
 
 }
 
