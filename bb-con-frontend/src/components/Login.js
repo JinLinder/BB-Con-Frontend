@@ -24,7 +24,8 @@ export default function Login() {
     .then(data=>{
       console.log("data",data);
       if(data.message===`User: ${login.username} loged in.`) {
-        console.log("if works")
+        console.log("if works");
+        localStorage.setItem("user", login.username)
         navigate("/home")
       }
     })

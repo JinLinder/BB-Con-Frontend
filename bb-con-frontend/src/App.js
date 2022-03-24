@@ -8,6 +8,7 @@ import Signup from './components/Signup';
 import ActHome from './components/Activity/ActHome'; 
 import ComHome from './components/Community/ComHome';
 import CreateAct from './components/Activity/CreateAct';
+import ActItem from './components/Activity/ActItem';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/activity" element={<ActHome/>}/>
             <Route path="/community" element={<ComHome/>}/>
             <Route path="/activity/add" element={<CreateAct/>}/>
+            <Route path="//activity/item" element={<ActItem/>}/>
             
         </Routes>
     </Router>
