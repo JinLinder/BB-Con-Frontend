@@ -26,6 +26,7 @@ export default function ActHome() {
     // console.log(userFilter)
     const searchFilter=allActs.filter(act=>act.community===search.community)
     console.log(searchFilter)
+    
   }
 
   return (  
