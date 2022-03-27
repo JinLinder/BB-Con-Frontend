@@ -30,7 +30,7 @@ function App() {
             <Route path="/activity" element={<ActHome/>}/>
             <Route path="/community" element={<ComHome/>}/>
             <Route path="/activity/add" element={<CreateAct/>}/>
-            <Route path="//activity/item" element={<ActItem/>}/>
+            <Route path="/activity/item/:actId" element={<ActItem/>}/>
             
         </Routes>
     </Router>
