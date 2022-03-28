@@ -7,13 +7,11 @@ export default function ActItem() {
 
     console.log(params.actId);
     useEffect(()=>{
-        fetch(`http://localhost:5000/activity/${params.actId}`)
+        fetch('http://localhost:5000/activity/item/'+params.actId)
             .then(res=>res.json())
-            .then(data=>{console.log(data)})
-    }
-        
+            .then(data=>{console.log(data); console.log("fetch works")} )
+    }       
     )
-
   return (
     <div>
         <h3>Title:</h3>
