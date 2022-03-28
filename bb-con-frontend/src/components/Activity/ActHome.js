@@ -17,53 +17,34 @@ export default function ActHome() {
   }, [])
 
   // handle filter function
-  // useEffect(()=>{
-  //   setOutput([])
-  //   allActs.filter(act=>{
-  //     if(act.community===search.community){
-  //       setOutput(outPut=>[...outPut, act])
-  //     }
-  //   }
-  //   )
-  // }, [search])
   useEffect(()=>{
-    setOutput([])
+    // default value without search
+    setOutput(allActs)
+
+    //search only by community
     if(search.community){
-      allActs.filter(
-        act=>{
-              if(act.community===search.community){
-                setOutput(outPut=>[...outPut, act])
-              }
-            }
-      )
+      const result = allActs.filter(act=>{return act.community===search.community})
+      setOutput(result)
       console.log("search.community")
     }
+    //search only by time
     if(search.time){
-      allActs.filter(
-        act=>{
-              if(act.time.includes(search.time)){
-                setOutput(outPut=>[...outPut, act])
-              }
-            }
-      )
+      const result= allActs.filter(act=>{return act.time.includes(search.time)})
+      setOutput(result)
       console.log(outPut)
       console.log(search.time)
     }
-
-    if(search.time && search.time){
-      allActs.filter(
-        act=>{
-              if(act.community===search.community && act.time.includes(search.time)){
-                setOutput(outPut=>[...outPut, act])
-              }
-            }
+    //search by both
+    if(search.community && search.time){
+      const result= allActs.filter(
+        act=>{return act.community===search.community && act.time.includes(search.time)}
       )
-      console.log(outPut)
+      setOutput(result)
+      console.log(result)
       console.log(search.time)
     }
-
-
-    }, [search]
+    }
+    , [search]
   )
 
    //handle crete activity
@@ -71,15 +52,11 @@ export default function ActHome() {
    const handleCreateA =()=>{
      navigate("/activity/add")
    }
-  // const handelFilter= ()=>{
-
-  //     allActs.filter(act=>act.date===search.date)
-
-  // }
 
   return (
 
     <div>
+      <p>Search activities</p>
         <select name="location" id=""
           onChange={(e)=>{setSearch({...search, community: e.target.value})}}
           >
@@ -90,10 +67,9 @@ export default function ActHome() {
         </select>
         <input type="date"
         onChange={(e)=>{setSearch({...search, time: e.target.value})}}
-        />
-        {/* <button
-         onClick={handleSearch}
-         >Search</button> <br /> */}
+        />  <br />
+         <br />
+
         <button onClick={handleCreateA}>Create activity</button>
         {outPut.map((act) => ( <ActList
                                 key={act.actId}

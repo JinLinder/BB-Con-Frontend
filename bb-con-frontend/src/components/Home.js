@@ -7,7 +7,6 @@ const navigate = useNavigate()
 
 
 const handleActivity =()=>{
-  console.log("this works");
   navigate("/activity");
 }
 
