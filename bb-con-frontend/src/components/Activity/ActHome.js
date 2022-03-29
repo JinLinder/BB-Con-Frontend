@@ -6,7 +6,7 @@ export default function ActHome() {
 
   const [allActs, setAllActs] = useState([]);
   const [search, setSearch] = useState({});
-  const [outPut, setOutput]= useState([])
+  const [outPut, setOutput]= useState([]);
 
 
   //fetch all the activities
@@ -14,7 +14,8 @@ export default function ActHome() {
     fetch('http://localhost:5000/activity/')
           .then(res=>res.json())
           .then(data=>{console.log(data); setAllActs(data);setOutput(data)})
-  }, [])
+    }, 
+  [])
   
   // handle filter function
   useEffect(()=>{
