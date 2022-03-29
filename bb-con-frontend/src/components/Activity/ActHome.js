@@ -13,14 +13,11 @@ export default function ActHome() {
   useEffect(()=>{
     fetch('http://localhost:5000/activity/')
           .then(res=>res.json())
-          .then(data=>{console.log(data); setAllActs(data)})
+          .then(data=>{console.log(data); setAllActs(data);setOutput(data)})
   }, [])
-
+  
   // handle filter function
   useEffect(()=>{
-    // default value without search
-    setOutput(allActs)
-
     //search only by community
     if(search.community){
       const result = allActs.filter(act=>{return act.community===search.community})
@@ -52,10 +49,13 @@ export default function ActHome() {
    const handleCreateA =()=>{
      navigate("/activity/add")
    }
-
+   //handle show my activity
+   const showMyAct=()=>{
+     
+   }
   return (
-
     <div>
+      <button onClick={showMyAct}>My activities</button>
       <p>Search activities</p>
         <select name="location" id=""
           onChange={(e)=>{setSearch({...search, community: e.target.value})}}
@@ -69,13 +69,11 @@ export default function ActHome() {
         onChange={(e)=>{setSearch({...search, time: e.target.value})}}
         />  <br />
          <br />
-
         <button onClick={handleCreateA}>Create activity</button>
         {outPut.map((act) => ( <ActList
                                 key={act.actId}
                                 act={act}
                                 />)
-
         )}
     </div>
   )

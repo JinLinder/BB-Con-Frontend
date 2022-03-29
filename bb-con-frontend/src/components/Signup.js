@@ -30,6 +30,7 @@ export default function Signup() {
       .catch((err)=>{
         console.log('err', err)
       })
+      navigate("/home")
   }
 //handle cancle
   const handleCancle= ()=>{

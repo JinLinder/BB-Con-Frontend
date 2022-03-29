@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ActListjs(props) {
+export default function ActList(props) {
+  console.log(props.act.actId);
   return (
-   <Link to={{pathname:`/activity/item/ ${props.act.actId}`, 
-            // state:{actId:props.act.actId}
+   <Link to={{pathname:`/activity/item/ ${props.act.actId}` 
             }}>
       <div>
         <p>Title: {props.act.title}</p>
