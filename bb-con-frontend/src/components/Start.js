@@ -1,14 +1,28 @@
 import React from 'react';
 
+import Home from './Home';
+
 export default function Start() {
 
-  return (
+  const user = localStorage.getItem("user")
+  console.log(user);
+  if(user){ 
+    return(
     <>
-   <p>Put logo here</p>
-   <p>Intro for the app</p>
-   <p>Pictures</p>
-   <a href="/login">Login</a> <br />
-   <a href="/signup">signup</a>
+    <Home/>
     </>
-  )
+      
+      )
+    
+  } else {
+    return (
+      <>
+     <p>Put logo here</p>
+     <p>Intro for the app</p>
+     <p>Pictures</p>
+     <a href="/login">Login</a> <br />
+     <a href="/signup">signup</a>
+      </>
+    )
+  }
 }

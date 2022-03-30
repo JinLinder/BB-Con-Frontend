@@ -15,7 +15,7 @@ export default function Signup() {
   const handleSignup = (evt)=>{
     evt.preventDefault();
     console.log(signup);
-
+    localStorage.setItem("user", signup.username)
     fetch("http://localhost:5000/signup", {
       method:"POST",
       headers: {
@@ -26,6 +26,8 @@ export default function Signup() {
     .then(res=>res.json())
       .then(data=>{
         console.log("data",data);
+
+        
       })
       .catch((err)=>{
         console.log('err', err)
