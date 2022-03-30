@@ -29,7 +29,7 @@ export default function ActItem() {
               <p>community:{i.community}</p>
               <p>adress:{i.adress}</p>
               <p>info:{i.info}</p>
-              <p>participants:{i.participants}</p>
+              {/* <p>participants:{i.participants}</p> */}
               <JoinAct item={i}/>
               
             </div>

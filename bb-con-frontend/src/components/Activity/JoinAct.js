@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 
 export default function JoinAct(props) {
+    console.log(props.item.participants)
   const [participants, setParticipants] = useState(props.item.participants);
   const user = localStorage.getItem("user");
 
   // check if user already in the participants array
-  const findUser = participants.find((participant) => {
+  const findParticipant = participants.find((participant) => {
     return participant === user;
   });
-  console.log(findUser);
+  console.log("findParticipant: ",findParticipant);
 
   //handle join activity function
 
   const joinAct = () => {
     
-    if (findUser) {
+    if (findParticipant) {
       console.log("user already participant");
     } else {
       setParticipants([...participants, user]); 
@@ -38,8 +39,8 @@ useEffect(()=>{
     },[participants]
 )
 
-  if (props.item.username === user) {
-    return <></>;
+  if (user === findParticipant) {
+    return <><p>participants:{participants} </p></>;
   } else {
     return (
       <div>
