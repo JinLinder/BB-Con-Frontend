@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export default function JoinAct(props) {
-  console.log(props.item.username);
-  const [participants, setParticipants] = useState([props.item.username]);
+  const [participants, setParticipants] = useState(props.item.participants);
   const user = localStorage.getItem("user");
 
   // check if user already in the participants array
