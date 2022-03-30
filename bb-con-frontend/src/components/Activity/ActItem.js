@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom'
 import JoinAct from './JoinAct';
 
+
 export default function ActItem() {
 
     const [item, setItem] = useState([])
@@ -16,24 +17,28 @@ export default function ActItem() {
             .then(data=>{console.log(data); setItem(data)}  )
     },
     [url])
-  return (
-    <div>
-        <h3>Activity</h3>
-        {item.map((i)=>( <div>
-          <p>Title:{i.title}</p>
-          <p>time:{i.time}</p>
-          <p>community:{i.community}</p>
-          <p>adress:{i.adress}</p>
-          <p>info:{i.info}</p>
-          <p>participants:{i.participants}</p>
-          <button>Join</button>
-        </div>
-          
-          
-        ))}
+    console.log(localStorage.getItem("user"))
+    console.log(item)
     
-    </div>
-  )
+      return (
+        <div>
+            <h3>Activity</h3>
+            {item.map((i)=>( <div>
+              <p>Title:{i.title}</p>
+              <p>time:{i.time}</p>
+              <p>community:{i.community}</p>
+              <p>adress:{i.adress}</p>
+              <p>info:{i.info}</p>
+              <p>participants:{i.participants}</p>
+              <JoinAct item={i}/>
+              
+            </div>
+              
+              
+            ))}
+        
+        </div>
+      )
 }
 
 
