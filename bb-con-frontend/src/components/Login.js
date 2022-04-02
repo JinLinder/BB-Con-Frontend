@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-const axios = require('axios')
+import {StyledLogin} from './Styles/Login.style'
 
 export default function Login() {
 
@@ -39,20 +39,24 @@ export default function Login() {
   }
 
   return (
-    <div>
-        <p>Log in here</p>
-        <button onClick={handleCancle}>Cancle</button>
-        <label htmlFor="username">User Name </label> 
+    <StyledLogin>
+    {/* <div class="container"> */}
+      <div>
+        <h2>Log in </h2>
+        <label htmlFor="username"> <strong>User Name</strong>  </label>
         <input type="text" 
           value={login.username}
           onChange={(e)=>setLogin({...login, username: e.target.value})}
-        /><br />
-        <label htmlFor="password">Password</label>
+        />
+        <label htmlFor="password"> <strong>Password</strong> </label>
         <input type="text" 
           value={login.password}
           onChange={(e)=>setLogin({...login, password: e.target.value})}
-        /> <br />
-        <button onClick={handleLogin}>Log in</button>
-    </div>
+        />
+        
+        <button class="login" onClick={handleLogin}>Log in</button><button class="cancle" onClick={handleCancle}>Cancle</button>
+        </div>
+    {/* </div> */}
+    </StyledLogin>
   )
 }
