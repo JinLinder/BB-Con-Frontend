@@ -9,14 +9,14 @@ const GlobalStyles = createGlobalStyle`
 
     button {
         cursor:pointer;
-        background: #F26868;
+        background: ${({theme})=>theme.colors.light};
         border-radius: 90px;
         color: white;
         
     };
 
     button:hover{
-        background-color: #F04141;
+        background-color: ${({theme})=>theme.colors.dark};
     }
 `
 export default GlobalStyles

@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import img from "./pic/background.jpg"
 
-export const StyledLogin = styled.div`
+export const StyledSignUp = styled.div`
     margin: 0;
     height:100vh;
     position:relative;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 
     &::before {
         content: '';
@@ -34,23 +34,24 @@ export const StyledLogin = styled.div`
         border-radius: 40px; 
         box-shadow: 4px 4px #878787;    
     }
-    
+
     h2 {
         padding-bottom: 20px;
         text-shadow: 1px 1px;
     }
 
-    label {
-        font-weight: bold;
-        font-size: 1.2rem;
-    }
-    input{
+    input,select{
         width: 300px;
         height:40px;
         border-radius: 30px;
         margin-top:10px;
         margin-bottom:20px;
         font-size: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        font-size: 1.2rem;
     }
 
     button {
@@ -60,10 +61,11 @@ export const StyledLogin = styled.div`
         height:40px;
         font-weight: bold;
     }
-
+    
     a {
         color: #F04141;
         font-size: 1.2rem;
         font-weight: bold;
     }
+
 `

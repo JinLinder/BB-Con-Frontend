@@ -13,6 +13,8 @@ import CreatePost from './components/Community/CreatePost';
 import UserProfile from './components/UserProfile';
 import { useEffect, useState } from 'react';
 import GlobalStyles from './components/Styles/Global';
+import { ThemeProvider } from "styled-components";
+import theme from './components/Styles/Theme';
 
 function App() {
   //const user = localStorage.getItem("user")
@@ -27,8 +29,10 @@ function App() {
     }
   }, [])
 
-    return (<div className="App">
-      <GlobalStyles/>
+  return (
+    <ThemeProvider theme={theme}>
+    <div className="App">
+    <GlobalStyles/>
     <Router>
       {isLoggedIn ? <div><p><Link to="/userProfile">My profile</Link></p></div> 
         : <div></div>}
@@ -45,8 +49,10 @@ function App() {
           <Route path="/community/add" element={<CreatePost/>}/>
           <Route path="/userProfile" element={<UserProfile/>}/>
       </Routes>
-  </Router>
-  </div>)
+    </Router>
+    </div>
+    </ThemeProvider>
+  )
   
     
 

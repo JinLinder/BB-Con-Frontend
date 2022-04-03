@@ -41,7 +41,6 @@ export default function Login() {
 
   return (
     <StyledLogin>
-    {/* <div class="container"> */}
       <div>
         <FaTimes 
           style={{cursor: 'pointer', 
@@ -52,12 +51,12 @@ export default function Login() {
                 }}
           onClick={handleCancle}/>
         <h2>Log in </h2>
-        <label htmlFor="username"> <strong>User Name</strong>  </label>
+        <label htmlFor="username"> User Name  </label>
         <input type="text" 
           value={login.username}
           onChange={(e)=>setLogin({...login, username: e.target.value})}
         />
-        <label htmlFor="password"> <strong>Password</strong> </label>
+        <label htmlFor="password"> Password </label>
         <input type="text" 
           value={login.password}
           onChange={(e)=>setLogin({...login, password: e.target.value})}
@@ -65,7 +64,6 @@ export default function Login() {
         <button class="login" onClick={handleLogin}>Log in</button>
         <p>Not a member yet? <a href="/signup">Sign up</a></p> 
         </div>
-    {/* </div> */}
     </StyledLogin>
   )
 }
