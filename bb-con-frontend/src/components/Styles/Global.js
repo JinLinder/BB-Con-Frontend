@@ -8,17 +8,15 @@ const GlobalStyles = createGlobalStyle`
     }
 
     button {
-        background: #91F6AE;
-        border-radius: 92px;
-        opacity: 1;
-        font-family: 'Source Sans Pro', sans-serif; 
-        letter-spacing: 0px;
-        color: #141414;
-
+        cursor:pointer;
+        background: #F26868;
+        border-radius: 90px;
+        color: white;
+        
     };
 
     button:hover{
-        background-color: #0DAF3B;
+        background-color: #F04141;
     }
 `
 export default GlobalStyles

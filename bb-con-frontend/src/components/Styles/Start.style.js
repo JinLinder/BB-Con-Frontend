@@ -42,9 +42,8 @@ export const StyledStart = styled.div`
     h1 {
         font-family: "logoFont";
         font-size:80px;
-        color:#E44343;
+        color:#F26868;
         padding-top:150px;
-        opacity: 0.8;
     }
 
      p {

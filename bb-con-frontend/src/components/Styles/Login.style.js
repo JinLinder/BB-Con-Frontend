@@ -5,6 +5,9 @@ export const StyledLogin = styled.div`
     margin: 0;
     height:100vh;
     position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 
     &::before {
         content: '';
@@ -21,35 +24,36 @@ export const StyledLogin = styled.div`
 
     div{
         position:relative;
-        padding-top: 100px;  
-        padding-bottom:50px;
+        width: 400px;
+        padding-bottom:30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;   
+        align-items: center; 
+        border: 2px solid #737171; 
+        border-radius: 40px; 
+        box-shadow: 4px 4px #878787;    
     }
+    
+    h2 {
+        padding-bottom: 20px;
     }
-
-    h4{
-        margin:0;
-    };
-
     input{
         width: 300px;
         height:40px;
-        border-radius: 92px;
+        border-radius: 30px;
         margin-top:10px;
         margin-bottom:20px;
-
+        font-size: 20px;
     }
+
     button {
         font-weight: 700;
         font-size: 1rem;
-        width: 100px;
+        width: 150px;
+        height:40px;
     };
-
-    button:hover{
-        background-color: #0DAF3B;
+    a {
+        color: #F04141;
     }
-    
 `

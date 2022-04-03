@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {StyledLogin} from './Styles/Login.style'
+import {FaTimes} from 'react-icons/fa';
 
 export default function Login() {
 
@@ -42,6 +43,14 @@ export default function Login() {
     <StyledLogin>
     {/* <div class="container"> */}
       <div>
+        <FaTimes 
+          style={{cursor: 'pointer', 
+                  position:'absolute', 
+                  right:'20px', 
+                  top:'20px', 
+                  color:'#F04141'
+                }}
+          onClick={handleCancle}/>
         <h2>Log in </h2>
         <label htmlFor="username"> <strong>User Name</strong>  </label>
         <input type="text" 
@@ -53,8 +62,8 @@ export default function Login() {
           value={login.password}
           onChange={(e)=>setLogin({...login, password: e.target.value})}
         />
-        
-        <button class="login" onClick={handleLogin}>Log in</button><button class="cancle" onClick={handleCancle}>Cancle</button>
+        <button class="login" onClick={handleLogin}>Log in</button>
+        <p>Not a member yet? <a href="/signup">Sign up</a></p> 
         </div>
     {/* </div> */}
     </StyledLogin>
