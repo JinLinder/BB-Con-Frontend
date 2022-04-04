@@ -1,32 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Login from './Login';
-import Signup from './Signup';
+import React from 'react'; 
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Home() {
-    const test =()=>{
-    console.log("clicked test");
-    }
-  return (
-    <>
-    <p>Put logo here</p>
-    <a href="#" onClick={test}>Log in</a>
-    {/* <Router>
-        <div>
-            <ul>
-                <li><Link to="/login"> Log in</Link></li>
-                <li><Link to="/signup"> sign up</Link></li>
-            </ul>
-        </div>
+const navigate = useNavigate()
 
-        <Switch>
-            <Route exact path="/">
-                <h1>Welcom!</h1>
-            </Route>
-            <Route path="/login" component={Login}></Route>
-            <Route path="/signup" component={Signup}></Route>
-        </Switch>
-    </Router> */}
-    </>
+
+const handleActivity =()=>{
+  navigate("/activity");
+}
+
+const handleCommunity =()=>{
+  console.log("this works");
+  navigate("/community");
+
+}
+
+  return (
+    <div>
+        <p>logo here</p>
+        <p>Title here</p>
+        <p>lite text?</p>
+        <button onClick={handleActivity}>Activity</button>
+        <button onClick={handleCommunity}>Community</button>
+    </div>
   )
 }
