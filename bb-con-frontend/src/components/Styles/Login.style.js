@@ -58,7 +58,7 @@ export const StyledLogin = styled.div`
         font-size: 1.2rem;
         width: 150px;
         height:40px;
-        font-weight: bold;
+        
     }
 
     a {

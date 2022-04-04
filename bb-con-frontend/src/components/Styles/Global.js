@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
         background: ${({theme})=>theme.colors.light};
         border-radius: 90px;
         color: white;
+        font-weight: bold;
         
     };
 
