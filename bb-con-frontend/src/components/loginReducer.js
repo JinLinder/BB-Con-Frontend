@@ -1,5 +1,12 @@
 const loginReducer = (state={loginTaken:false}, action) =>{
-    return state;
+    console.log(action);
+    if(action.type === 'user login') {
+        return state = {loginTaken:true};
+    } 
+    else if (action.type === 'user logout') {
+        return state = {loginTaken:false};
+    }
+    return state
 }
 
 export default loginReducer

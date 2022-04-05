@@ -15,19 +15,25 @@ import { useEffect, useState } from 'react';
 import GlobalStyles from './Styles/Global'
 import { ThemeProvider } from "styled-components";
 import theme from './Styles/Theme';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 
 function App() {
 
 const loginTaken = useSelector(state => state.loginTaken)
 console.log(loginTaken);
+const dispatch = useDispatch
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
     <GlobalStyles/>
     <Router>
-      {/* {isLoggedIn ? <div><p><Link to="/userProfile">My profile</Link></p></div> 
-        : <div></div>} */}
+      {loginTaken===true ? <div><p><Link to="/userProfile">My profile</Link></p>
+                                <p><Link to="/" onClick={() => dispatch({type: 'user logout'}) }>log out</Link></p>
+                            </div> 
+        : <div>
+            <Link to="/login">log in</Link> <br />
+            <Link to="/signup">sign up</Link>
+          </div>}
 
       <Routes>
           <Route exact path="/" element={<Start/>}/>
@@ -42,7 +48,6 @@ console.log(loginTaken);
           <Route path="/userProfile" element={<UserProfile/>}/>
       </Routes>
     </Router>
-
     </div>
     </ThemeProvider>
   )

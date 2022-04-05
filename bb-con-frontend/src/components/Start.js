@@ -15,9 +15,9 @@ export default function Start() {
     return (  
     <StyledStart>
       <div>
-
+{/* 
         <a href="/login">Login</a> <br />
-        <a href="/signup">signup</a>
+        <a href="/signup">signup</a> */}
         <h3>BB-Con</h3>
         <h1>Baby connection</h1>
         <p> Use BB-Con to meet other parents and make friends.<br/> Here we share feelings, experiences, knowledge and support each other.</p>

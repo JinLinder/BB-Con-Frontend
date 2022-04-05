@@ -3,11 +3,13 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {StyledLogin} from '../Styles/Login.style'
 import {FaTimes} from 'react-icons/fa';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 
 export default function Login() {
-  const loginTaken = useSelector(state => state.loginTaken)
+  const loginTaken = useSelector(state => state.loginTaken);
   console.log(loginTaken);
+   const dispatch = useDispatch()
+
   const [login, setLogin] = useState({username:"", password:""})
   const navigate = useNavigate()
 
@@ -30,6 +32,9 @@ export default function Login() {
         console.log("if works");
         localStorage.setItem("user", login.username)
         navigate("/home")
+        
+        dispatch({type: 'user login'})
+        
       }
     })
     .catch((err)=>{
