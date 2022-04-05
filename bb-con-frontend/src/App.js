@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 import GlobalStyles from './Styles/Global'
 import { ThemeProvider } from "styled-components";
 import theme from './Styles/Theme';
+import TestRedux from './components/TestRedux';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
           <Route path="/userProfile" element={<UserProfile/>}/>
       </Routes>
     </Router>
+    <TestRedux/>
     </div>
     </ThemeProvider>
   )
