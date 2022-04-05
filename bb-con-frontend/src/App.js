@@ -51,29 +51,6 @@ const dispatch = useDispatch
     </div>
     </ThemeProvider>
   )
-  
-    
-
-  //   return (
-  //     <Router>
-  //     {/* {user ? <div><p><Link to="/userProfile">My profile</Link></p></div> 
-  //       : <div></div>} */}
-  //     <div><p><Link to="/userProfile">My profile</Link></p></div>
-  //     <Routes>
-  //         <Route exact path="/" element={<Start/>}/>
-  //         <Route path="/login" element={<Login/>}/>
-  //         <Route path="/signup" element={<Signup/>}/>
-  //         <Route path="/home" element={<Home/>}/>
-  //         <Route path="/activity" element={<ActHome/>}/>
-  //         <Route path="/activity/add" element={<CreateAct/>}/>
-  //         <Route path="/activity/item/:actId" element={<ActItem/>}/>
-  //         <Route path="/community" element={<ComHome/>}/>
-  //         <Route path="/community/add" element={<CreatePost/>}/>
-  //         <Route path="/userProfile" element={<UserProfile/>}/>
-  //     </Routes>
-  // </Router>
-  //     )
-
 }
 
 
