@@ -3,7 +3,7 @@ import { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StyledSignUp } from '../Styles/SignUp.style';
 import {FaTimes} from 'react-icons/fa';
-
+import { useDispatch} from 'react-redux'
 export default function Signup() {
   const [signup, setSignup]=useState({
     username:"",
@@ -11,7 +11,7 @@ export default function Signup() {
     babyAge:"",
     location:""
   })
-
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 //handle signup
   const handleSignup = (evt)=>{
@@ -34,6 +34,7 @@ export default function Signup() {
       .catch((err)=>{
         console.log('err', err)
       })
+      dispatch({type: 'user signup'})
       navigate("/home")
   }
 //handle cancle

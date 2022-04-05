@@ -5,6 +5,8 @@ const loginReducer = (state={loginTaken:false}, action) =>{
     } 
     else if (action.type === 'user logout') {
         return state = {loginTaken:false};
+    } else if (action.type === 'user signup'){
+        return state = {loginTaken:true};
     }
     return state
 }
