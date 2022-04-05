@@ -3,9 +3,11 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {StyledLogin} from '../Styles/Login.style'
 import {FaTimes} from 'react-icons/fa';
+import {useSelector} from 'react-redux'
 
 export default function Login() {
-
+  const loginTaken = useSelector(state => state.loginTaken)
+  console.log(loginTaken);
   const [login, setLogin] = useState({username:"", password:""})
   const navigate = useNavigate()
 

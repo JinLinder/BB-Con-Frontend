@@ -5,8 +5,8 @@ import App from './App';
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './components/TestReduxReducer'
-const store = createStore(rootReducer)
+import loginReducer from './components/loginReducer';
+const store = createStore(loginReducer)
 
 
 ReactDOM.render(

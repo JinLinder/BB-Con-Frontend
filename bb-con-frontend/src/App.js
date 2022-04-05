@@ -15,19 +15,12 @@ import { useEffect, useState } from 'react';
 import GlobalStyles from './Styles/Global'
 import { ThemeProvider } from "styled-components";
 import theme from './Styles/Theme';
-import TestRedux from './components/TestRedux';
+import {useSelector} from 'react-redux'
 
 function App() {
 
-  // const [isLoggedIn, setIsLoggedIn] = useState ();
-  // useEffect(()=>{
-  //   const user = localStorage.getItem("user");
-  //   console.log(user);
-  //   if(user){
-  //     setIsLoggedIn(user)
-  //   }
-  // }, [])
-
+const loginTaken = useSelector(state => state.loginTaken)
+console.log(loginTaken);
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
@@ -49,7 +42,7 @@ function App() {
           <Route path="/userProfile" element={<UserProfile/>}/>
       </Routes>
     </Router>
-    <TestRedux/>
+
     </div>
     </ThemeProvider>
   )
