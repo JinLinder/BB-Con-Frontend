@@ -23,7 +23,8 @@ export default function ActItem() {
       return (
         <div>
             <h3>Activity</h3>
-            {item.map((i)=>( <div>
+            {item.map((i)=>( <div key={i.actId}>
+                
               <p>Title:{i.title}</p>
               <p>time:{i.time}</p>
               <p>community:{i.community}</p>

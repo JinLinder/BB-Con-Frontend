@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import {v4 as uuidv4} from 'uuid';
 
+
 export default function CreateAct() {
   const [act, setAct] = useState({
     username:localStorage.getItem("user"),
     actId:uuidv4(),
+
     title:"",
     community:"",
     adress:"",
