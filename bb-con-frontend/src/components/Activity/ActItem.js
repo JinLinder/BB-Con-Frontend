@@ -31,7 +31,6 @@ export default function ActItem() {
               <p>adress:{i.adress}</p>
               <p>organizer:{i.username}</p>
               <p>info:{i.info}</p>
-              {/* <p>participants:{i.participants}</p> */}
               <JoinAct item={i}/>
               
             </div>

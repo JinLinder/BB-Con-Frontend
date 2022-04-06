@@ -40,6 +40,7 @@ export default function ComHome() {
         onChange={(e)=>{setSearch({...search, searchWords: e.target.value})}}/> <br /><br />
 
       <button onClick={createPost} >Share something</button>
+
       {
         outPut.map((post)=>(
           <PostList

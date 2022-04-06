@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {v4 as uuidv4} from 'uuid'
+import {v4 as uuidv4} from 'uuid';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreatePost() {
     const [post, setPost] = useState({
@@ -9,12 +10,17 @@ export default function CreatePost() {
         text:""
     })
 
+    const [infoElement, setInfoElement] = useState([])
+
+    const navigate = useNavigate();
+
     //handle share post
     const sharePost=(evt)=>{
         evt.preventDefault();
         console.log(post);
 
-        fetch("http://localhost:5000/community/add", {
+        if(post.title !== "" & post !=="") {
+          fetch("http://localhost:5000/community/add", {
             method:"POST",
             headers: {
               "Content-Type":"application/json",
@@ -28,12 +34,17 @@ export default function CreatePost() {
         .catch((err)=>{
             console.log('err', err)
         })
+        navigate("/community")
+        } else if (post.title === "" || post ==="") {
+          setInfoElement([<p>Please fyll in title and info.</p>])
+        }    
     }
   return (
     <div><p>Create a new post</p>
         <input onChange={(e)=>{setPost({...post, title:e.target.value})}} type="text" placeholder='title' /><br />
         <textarea onChange={(e)=>{setPost({...post, text:e.target.value})}} name="" id="" cols="30" rows="10" placeholder='What do you want to share?'></textarea><br />   
         <button onClick={sharePost}>Share</button>
+        {infoElement}
     </div>
   )
 }
