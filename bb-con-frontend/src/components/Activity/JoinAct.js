@@ -1,28 +1,37 @@
 import React, { useEffect, useState } from "react";
 
 export default function JoinAct(props) {
-    console.log(props.item.participants)
-  const [participants, setParticipants] = useState(props.item.participants);
-  const user = localStorage.getItem("user");
 
-  // check if user already in the participants array
+  const [participants, setParticipants] = useState(props.item.participants);
+  const [organizer, setOrganizer] = useState(props.item.username);
+  //get logined user
+  const loginUser = localStorage.getItem("user");
+  console.log("participants:", participants, "organizer:", organizer, "loginUser", loginUser )
+  
+  // check if loginUser already in the participants array
   const findParticipant = participants.find((participant) => {
-    return participant === user;
+    return participant === loginUser & participant !== organizer;
   });
   console.log("findParticipant: ",findParticipant);
 
-  //handle join activity function
-
-  const joinAct = () => {
-    
-    if (findParticipant) {
-      console.log("user already participant");
-    } else {
-      setParticipants([...participants, user]); 
-    }
+//handle join activity function
+  const join = () => {  
+      setParticipants([...participants, loginUser]); 
   };
+
+//handle resign activity function
+  const resign = () => {
+    let newParticipants = participants.filter(participant=>{return participant !==loginUser})
+    setParticipants([newParticipants])
+  }
+
+//handle cancle activity function
+  const cancleAct= () => {
+    
+  }
+
   //fetch data
-useEffect(()=>{
+  useEffect(()=>{
     console.log(participants)
     const body = {participants:participants}
     console.log(body)
@@ -37,16 +46,23 @@ useEffect(()=>{
         .then(data=>{console.log("data", data)})
         .catch((err)=>{console.log("err", err)})
     },[participants]
-)
+  )
 
-  if (user === findParticipant) {
-    return <><p>participants:{participants} </p></>;
+  if(loginUser===organizer) {
+    return <div>
+              <p>participants:{participants} </p>
+              <button onClick={cancleAct}>Cancle event</button>
+            </div>
+  } else if (findParticipant) {
+    return <div>
+              <p>participants:{participants} </p>
+              <button onClick={resign}>Resign</button>
+            </div>
   } else {
-    return (
-      <div>
-        <button onClick={joinAct}>Join</button>
-      </div>
-    );
+    return <div>
+              <p>participants:{participants} </p>
+              <button onClick={join}>Join</button>
+            </div>
   }
 }
 

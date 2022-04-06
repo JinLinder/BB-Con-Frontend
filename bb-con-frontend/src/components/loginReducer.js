@@ -1,5 +1,5 @@
 const loginReducer = (state={loginTaken:false}, action) =>{
-    console.log(action);
+  
     if(action.type === 'user login') {
         return state = {loginTaken:true};
     } 

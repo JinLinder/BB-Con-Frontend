@@ -27,13 +27,13 @@ const dispatch = useDispatch
     <div className="App">
     <GlobalStyles/>
     <Router>
-      {loginTaken===true ? <div><p><Link to="/userProfile">My profile</Link></p>
+      {(loginTaken===true) ? <div><p><Link to="/userProfile">My profile</Link></p>
                                 <p><Link to="/" onClick={() => dispatch({type: 'user logout'}) }>log out</Link></p>
                             </div> 
-        : <div>
+        : (loginTaken===false) ? <div>
             <Link to="/login">log in</Link> <br />
             <Link to="/signup">sign up</Link>
-          </div>}
+          </div> : <div></div>}
 
       <Routes>
           <Route exact path="/" element={<Start/>}/>
