@@ -14,9 +14,10 @@ export default function ActItem() {
     useEffect(()=>{
         fetch(url)
             .then(res=>res.json())
-            .then(data=>{console.log(data); setItem(data)}  )
+            .then(data=>{setItem(data);console.log(data)}  )
     },
     [url])
+
     console.log(localStorage.getItem("user"))
     console.log(item)
     
@@ -32,10 +33,7 @@ export default function ActItem() {
               <p>organizer:{i.username}</p>
               <p>info:{i.info}</p>
               <JoinAct item={i}/>
-              
-            </div>
-              
-              
+            </div>  
             ))}
         
         </div>

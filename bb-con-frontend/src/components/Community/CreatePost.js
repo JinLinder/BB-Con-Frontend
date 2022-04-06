@@ -19,7 +19,7 @@ export default function CreatePost() {
         evt.preventDefault();
         console.log(post);
 
-        if(post.title !== "" & post !=="") {
+        if(post.title !== "" & post.text !=="") {
           fetch("http://localhost:5000/community/add", {
             method:"POST",
             headers: {
@@ -35,7 +35,7 @@ export default function CreatePost() {
             console.log('err', err)
         })
         navigate("/community")
-        } else if (post.title === "" || post ==="") {
+        } else if (post.title === "" || post.text ==="") {
           setInfoElement([<p>Please fyll in title and info.</p>])
         }    
     }

@@ -16,6 +16,7 @@ import GlobalStyles from './Styles/Global'
 import { ThemeProvider } from "styled-components";
 import theme from './Styles/Theme';
 import {useSelector, useDispatch} from 'react-redux'
+import PostItem from './components/Community/PostItem';
 
 function App() {
 
@@ -45,6 +46,7 @@ const dispatch = useDispatch
           <Route path="/activity/item/:actId" element={<ActItem/>}/>
           <Route path="/community" element={<ComHome/>}/>
           <Route path="/community/add" element={<CreatePost/>}/>
+          <Route path="/community/post/:postId" element={<PostItem/>}/>
           <Route path="/userProfile" element={<UserProfile/>}/>
       </Routes>
     </Router>
