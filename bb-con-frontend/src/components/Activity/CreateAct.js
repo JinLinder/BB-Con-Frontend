@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, } from 'react';
+import { useNavigate } from 'react-router-dom'
 import {v4 as uuidv4} from 'uuid';
 
 
@@ -15,12 +16,16 @@ export default function CreateAct() {
     participants:[localStorage.getItem("user")]
   })
 
+  const [infoElement, setInfoElement] = useState([])
+
+  const navigate=useNavigate()
+
   //handle create
   const handleCreate = (evt)=>{
     evt.preventDefault();
     console.log(act);
-
-    fetch("http://localhost:5000/activity/add", {
+    if(act.title !== "" & act.community !=="" & act.time!=="" & act.adress!==""){
+      fetch("http://localhost:5000/activity/add", {
       method:"POST",
       headers: {
         "Content-Type":"application/json",
@@ -28,12 +33,12 @@ export default function CreateAct() {
       body: JSON.stringify(act)
     })
     .then(res=>res.json())
-    .then(data=>{
-      console.log("data",data);
-    })
-    .catch((err)=>{
-      console.log('err', err)
-    })
+    .then(data=>{console.log("data",data);})
+    .catch((err)=>{console.log('err', err)});
+    navigate("/activity/createSuccess")
+    } else if (act.title === "" || act.community ==="" || act.time==="" || act.adress==="") {
+      setInfoElement([<p>Please complete the form.</p>])
+    }
   }
 
   return (
@@ -60,7 +65,7 @@ export default function CreateAct() {
       <textarea name="info" id="" cols="30" rows="10" placeholder='Write activity info here'
         onChange={(e)=>setAct({...act, info:e.target.value})}></textarea> <br />
       <button onClick={handleCreate}>Create</button>
-
+      {infoElement}
     </div>
   )
 }

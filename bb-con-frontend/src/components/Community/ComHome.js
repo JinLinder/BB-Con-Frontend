@@ -27,12 +27,19 @@ export default function ComHome() {
     }
     }, [search]
   )
+  
+  // add new post to the allPosts state
+    const addPost = (newPost) => {
+        setAllPosts([...allPosts, newPost])
+    }
+
 
   //create new post
   const navigate=useNavigate()
   const createPost=()=>{
     navigate("/community/add")
   }
+  
   return (
     <div>
       <h1>Community Home</h1>

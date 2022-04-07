@@ -28,14 +28,13 @@ export default function CreatePost() {
             body: JSON.stringify(post)
           })
         .then(res=>res.json())
-        .then(data=>{
-            console.log("data", data)
-        })
-        .catch((err)=>{
-            console.log('err', err)
-        })
-        navigate("/community")
-        } else if (post.title === "" || post.text ==="") {
+        .then(data=>{console.log("data", data)})
+        .catch((err)=>{console.log('err', err)})
+
+        navigate("/community/postSuccess")
+        } 
+        else if (post.title === "" || post.text ==="") 
+        {
           setInfoElement([<p>Please fyll in title and info.</p>])
         }    
     }

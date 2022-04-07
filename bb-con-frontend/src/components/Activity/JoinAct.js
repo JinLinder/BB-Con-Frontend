@@ -37,7 +37,7 @@ export default function JoinAct(props) {
     navigate("/activity")
   }
 
-  //fetch data
+  //uppdate participant in backend
   useEffect(()=>{
     console.log(participants)
     const body = {participants:participants}
