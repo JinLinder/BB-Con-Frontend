@@ -31,7 +31,7 @@ export default function CreatePost() {
         .then(data=>{console.log("data", data)})
         .catch((err)=>{console.log('err', err)})
 
-        navigate("/community/postSuccess")
+        navigate("/community/shareSuccess")
         } 
         else if (post.title === "" || post.text ==="") 
         {

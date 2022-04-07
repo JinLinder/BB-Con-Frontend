@@ -18,7 +18,7 @@ import theme from './Styles/Theme';
 import {useSelector, useDispatch} from 'react-redux'
 import PostItem from './components/Community/PostItem';
 import CreateSuccess from './components/Activity/CreateSuccess';
-
+import ShareSuccess from './components/Community/ShareSuccess';
 function App() {
 
 const loginTaken = useSelector(state => state.loginTaken)
@@ -49,6 +49,7 @@ const dispatch = useDispatch
           <Route path="/community" element={<ComHome/>}/>
           <Route path="/community/add" element={<CreatePost/>}/>
           <Route path="/community/post/:postId" element={<PostItem/>}/>
+          <Route path="/community/shareSuccess" element={<ShareSuccess/>}/>
           <Route path="/userProfile" element={<UserProfile/>}/> 
       </Routes>
     </Router>
