@@ -7,7 +7,8 @@ export default function CreatePost() {
         postId: uuidv4(),
         author:localStorage.getItem("user"),
         title:"",
-        text:""
+        text:"",
+        comments:[]
     })
 
     const [infoElement, setInfoElement] = useState([])
