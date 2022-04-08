@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { useState,useEffect } from 'react'
+import { useState,useEffect } from 'react';
+
 
 export default function Comments(props) {
     const user = localStorage.getItem("user")
@@ -9,8 +10,9 @@ export default function Comments(props) {
 
     //handle sendComments
     const sendComment = () =>{
-        console.log("comments sent")
-        setComment([...comments, {user: user, text:inputValue}])
+        console.log("comments sent");
+        setComment([...comments, {user: user, text:inputValue}]);
+  
     }
     //uppdate comments in backend
     useEffect(()=>{
@@ -31,13 +33,14 @@ export default function Comments(props) {
       }, [comments]
     )
 
+// get comments from backend
 
   return (
     <div>
-        <p>Comments:</p>
+            <p>Comments:{comments.map((com)=>(<div><p>user: {com.user}</p>
+            <p>text: {com.text}</p></div>))}</p>
             <input type="text" 
                 onChange={(e)=>setInputValue( e.target.value)}
-
             />           
             <button onClick={sendComment} >send</button>
     </div>

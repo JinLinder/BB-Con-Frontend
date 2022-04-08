@@ -4,8 +4,6 @@ import Comments from './Comments';
 
 export default function PostItem() {
     const [item, setItem] = useState([]);
-    // const [comments, setcomments] = useState(item.comments)
-    
     const params = useParams();
     console.log("postId:", params.postId);
     const url = `http://localhost:5000/community/item/${params.postId}`;
@@ -30,12 +28,12 @@ export default function PostItem() {
             <p>Author:{i.author}</p>
             <p>Title:{i.title}</p>
             <p>Text:{i.text}</p>
-            <Comments item={i}
-            // getComment = {pubComment}
-            />
+            {/* <p>Comments:{i.comments.map((com)=>(<div><p>user: {com.user}</p>
+            <p>text: {com.text}</p></div>))}</p> */}
+            <Comments item={i}/>
         </div>
-        ))
-        }
+        ))}
+        
     </div>
   )
 }
