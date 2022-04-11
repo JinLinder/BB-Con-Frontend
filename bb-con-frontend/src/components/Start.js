@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from './Home';
 import { StyledStart } from '../Styles/Start.style';
 
 export default function Start() {

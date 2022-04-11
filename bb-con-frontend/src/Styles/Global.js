@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
     };
 
     button:hover{
+        transform: scale(1.05);
         background-color: ${({theme})=>theme.colors.dark};
     }
 `

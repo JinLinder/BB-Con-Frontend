@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
+import { StyledActHome } from '../../Styles/activity/ActHome.style';
 import ActList from './ActList'
 
 export default function ActHome() {
@@ -55,28 +56,32 @@ export default function ActHome() {
      
    }
   return (
-    <div>
-      <button onClick={showMyAct}>My activities</button>
-      <p>Search activities</p>
-        <select name="location" id=""
-          onChange={(e)=>{setSearch({...search, community: e.target.value})}}
-          >
-            <option value="" disabled selected>Select a community</option>
-            <option value="Täby">Täby</option>
-            <option value="Sollentuna">Sollentuna</option>
-            <option value="Solna">Solna</option>
-        </select>
-        <input type="date"
-        onChange={(e)=>{setSearch({...search, time: e.target.value})}}
-        />  <br />
-         <br />
-        <button onClick={handleCreateA}>Create activity</button>
-        {outPut.map((act) => ( <ActList
-                                key={act.actId}
-                                act={act}
-                                />)
-        )}
-    </div>
+    <StyledActHome>
+      <div>
+        <button onClick={showMyAct}>My activities</button>
+        <h3>Search activities</h3>
+          <select name="location" id=""
+            onChange={(e)=>{setSearch({...search, community: e.target.value})}}
+            >
+              <option value="" disabled selected>Select a community</option>
+              <option value="Täby">Täby</option>
+              <option value="Sollentuna">Sollentuna</option>
+              <option value="Solna">Solna</option>
+          </select>
+          <input type="datetime-local"
+          onChange={(e)=>{setSearch({...search, time: e.target.value})}}
+          />  <br />
+          <br />
+          <button onClick={handleCreateA}>Create activity</button>
+          <div className='activityCards'>
+            {outPut.map((act) => ( <ActList
+                                    key={act.actId}
+                                    act={act}
+                                    />)
+            )}
+          </div>
+      </div>
+    </StyledActHome>
   )
 }
 

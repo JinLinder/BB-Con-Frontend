@@ -51,8 +51,8 @@ export default function Login() {
       <div>
         <FaTimes 
           style={{cursor: 'pointer', 
-                  position:'absolute', 
-                  right:'20px', 
+                  position:'relative', 
+                  left:'160px',
                   top:'20px', 
                   color:'#F04141'
                 }}
@@ -68,7 +68,7 @@ export default function Login() {
           value={login.password}
           onChange={(e)=>setLogin({...login, password: e.target.value})}
         />
-        <button class="login" onClick={handleLogin}>Log in</button>
+        <button onClick={handleLogin}>Log in</button>
         <p>Not a member yet? <a href="/signup">Sign up</a></p> 
         </div>
     </StyledLogin>

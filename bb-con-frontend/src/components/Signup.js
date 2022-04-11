@@ -47,8 +47,8 @@ export default function Signup() {
       <div>
       <FaTimes 
           style={{cursor: 'pointer', 
-                  position:'absolute', 
-                  right:'20px', 
+                  position:'relative', 
+                  left:'160px',
                   top:'20px', 
                   color:'#F04141'
                 }}

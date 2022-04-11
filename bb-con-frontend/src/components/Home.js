@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { useNavigate } from 'react-router-dom';
-
+import { StyledHome } from '../Styles/Home.style';
 
 export default function Home() {
 const navigate = useNavigate()
@@ -17,12 +17,15 @@ const handleCommunity =()=>{
 }
 
   return (
-    <div>
-        <p>logo here</p>
-        <p>Title here</p>
-        <p>lite text?</p>
-        <button onClick={handleActivity}>Activity</button>
-        <button onClick={handleCommunity}>Community</button>
-    </div>
+    <StyledHome>
+      <div>
+          <h1>Welcome to BB-Con!</h1>
+          <div>
+            <button onClick={handleActivity}>Activity</button>
+            <button onClick={handleCommunity}>Community</button>
+          </div>
+          
+      </div>
+    </StyledHome>
   )
 }
