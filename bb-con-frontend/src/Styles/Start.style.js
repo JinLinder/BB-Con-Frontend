@@ -29,21 +29,14 @@ export const StyledStart = styled.div`
     div{
         position:relative;
     }
-    h3 {
-        margin:0;
-        padding:0;
-        width:200px;
-        position:fixed;
-        color:#E44343;
-        font-family: "logoFont";
-        font-size:40px;
-    }
+
 
     h1 {
         font-family: "logoFont";
         font-size:80px;
         color:#F26868;
         padding-top:150px;
+        margin:0;
     }
 
      p {
