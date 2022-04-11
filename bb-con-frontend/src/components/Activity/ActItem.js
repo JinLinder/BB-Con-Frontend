@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom'
+import { StyledActItem } from '../../Styles/activity/ActItem.style';
 import JoinAct from './JoinAct';
 
 
@@ -22,21 +23,22 @@ export default function ActItem() {
     console.log(item)
     
       return (
-        <div>
-            <h3>Activity</h3>
-            {item.map((i)=>( <div key={i.actId}>
-                
-              <p>Title:{i.title}</p>
-              <p>time:{i.time}</p>
-              <p>community:{i.community}</p>
-              <p>adress:{i.adress}</p>
-              <p>organizer:{i.username}</p>
-              <p>info:{i.info}</p>
-              <JoinAct item={i}/>
-            </div>  
-            ))}
-        
-        </div>
+        <StyledActItem>
+          <div>
+              <h3>Activity</h3>
+              {item.map((i)=>( <div key={i.actId}>
+                  
+                <p>Title:{i.title}</p>
+                <p>time:{i.time}</p>
+                <p>community:{i.community}</p>
+                <p>adress:{i.adress}</p>
+                <p>organizer:{i.username}</p>
+                <p>info:{i.info}</p>
+                <JoinAct item={i}/>
+              </div>  
+              ))}
+          </div>
+        </StyledActItem>
       )
 }
 

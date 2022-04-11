@@ -46,8 +46,8 @@ export default function CreateAct() {
       <div className='container'>
         <h1>Create Activity</h1>
       
-        <label htmlFor="title">Title: </label>
-        <input type="text" value="" placeholder='Name of your activity' 
+        <label htmlFor="">Title: </label>
+        <input type="text" placeholder='Title' 
           onChange={(e)=>setAct({...act, title:e.target.value})}/>
 
         <label htmlFor="">Community: </label>
@@ -61,7 +61,7 @@ export default function CreateAct() {
         <input type="text" placeholder='Adress' 
           onChange={(e)=>setAct({...act, adress:e.target.value})}/>
 
-        <label htmlFor="title">Time: </label>
+        <label htmlFor="">Time: </label>
         <input type="datetime-local" 
             onChange={(e)=>setAct({...act, time:e.target.value})}/>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { StyledCreateSuccess } from '../../Styles/activity/CreateSuccess.style';
 
 export default function CreateSuccess() {
   const navigate = useNavigate();
@@ -15,11 +16,13 @@ export default function CreateSuccess() {
   }
 
   return (
-    <div>
-      <h3>Great! You have create an activity!</h3>
-      <button onClick={backToAct}>Join activities</button>
-      <button onClick={createMore}>Create more</button>
-    </div>
+    <StyledCreateSuccess>
+      <div>
+        <h1>Great! You have created an activity!</h1>
+        <button onClick={backToAct}>Join activities</button>
+        <button onClick={createMore}>Create more</button>
+      </div>
+    </StyledCreateSuccess>
   )
 }
 

@@ -7,7 +7,7 @@ height:100vh;
 position:relative;
 display: flex;
 justify-content: center;
-    align-items: center;
+align-items: center;
 
 &::before {
     content: '';
