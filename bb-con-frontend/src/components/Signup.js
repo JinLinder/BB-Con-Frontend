@@ -50,7 +50,8 @@ export default function Signup() {
                   position:'relative', 
                   left:'160px',
                   top:'20px', 
-                  color:'#F04141'
+                  color:'#F04141',
+                  background:'grey',
                 }}
                 onClick={handleCancle}/>
         <h2>Sign up</h2> 

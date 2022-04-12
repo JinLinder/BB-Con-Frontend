@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { StyledComHome } from '../../Styles/community/ComHome.style';
 import PostList from './PostList';
 
 export default function ComHome() {
@@ -41,21 +42,23 @@ export default function ComHome() {
   }
   
   return (
-    <div>
-      <h1>Community Home</h1>
-      <input type="text" placeholder='search post'
-        onChange={(e)=>{setSearch({...search, searchWords: e.target.value})}}/> <br /><br />
+    <StyledComHome>
+      <div>
+        <h1>Community Home</h1>
+        <input type="text" placeholder='Search'
+          onChange={(e)=>{setSearch({...search, searchWords: e.target.value})}}/> <br /><br />
 
-      <button onClick={createPost} >Share something</button>
-
-      {
-        outPut.map((post)=>(
-          <PostList
-            key={post.postId}
-            post={post}/>
-        ))
-      }
-
-    </div>
+        <button onClick={createPost} >Share something</button>
+        <div className='articleCards'>
+          {
+            outPut.map((post)=>(
+              <PostList
+                key={post.postId}
+                post={post}/>
+            ))
+          }
+        </div> 
+      </div>
+    </StyledComHome>
   )
 }

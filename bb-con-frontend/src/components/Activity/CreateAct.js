@@ -53,7 +53,8 @@ export default function CreateAct() {
                   position:'relative', 
                   left:'160px',
                   top:'20px', 
-                  color:'#F04141'
+                  color:'#F04141',
+                  background:'grey',
                 }}
           onClick={handleCancle}/>
         <h1>Create Activity</h1>

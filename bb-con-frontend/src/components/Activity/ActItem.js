@@ -36,7 +36,9 @@ export default function ActItem() {
                   position:'relative', 
                   left:'360px',
                   top: '-60px',
-                  color:'#F04141'
+                  color:'#F04141',
+                  background:'grey',
+                  
                 }} onClick={handleCancle}/>
                 <h2>Title:{i.title}</h2>
                 <div className='container'>
