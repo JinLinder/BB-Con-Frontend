@@ -2,7 +2,7 @@ import React, {useState, } from 'react';
 import { useNavigate } from 'react-router-dom'
 import {v4 as uuidv4} from 'uuid';
 import { StyledCreateAct } from '../../Styles/activity/CreateAct.style';
-
+import {FaTimes} from 'react-icons/fa';
 
 export default function CreateAct() {
   const [act, setAct] = useState({
@@ -41,9 +41,21 @@ export default function CreateAct() {
     }
   }
 
+  const handleCancle=()=>{
+    navigate("/activity")
+  }
+
   return (
     <StyledCreateAct>
       <div className='container'>
+      <FaTimes 
+          style={{cursor: 'pointer', 
+                  position:'relative', 
+                  left:'160px',
+                  top:'20px', 
+                  color:'#F04141'
+                }}
+          onClick={handleCancle}/>
         <h1>Create Activity</h1>
       
         <label htmlFor="">Title: </label>

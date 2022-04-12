@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { StyledActItem } from '../../Styles/activity/ActItem.style';
 import JoinAct from './JoinAct';
-
+import {FaTimes} from 'react-icons/fa';
 
 export default function ActItem() {
 
@@ -21,23 +22,39 @@ export default function ActItem() {
 
     console.log(localStorage.getItem("user"))
     console.log(item)
-    
+    const navigate = useNavigate()
+    const handleCancle=()=>{
+      navigate("/activity")
+    }
       return (
         <StyledActItem>
-          <div>
-              <h3>Activity</h3>
+          <>
+          
               {item.map((i)=>( <div key={i.actId}>
-                  
-                <p>Title:{i.title}</p>
-                <p>time:{i.time}</p>
-                <p>community:{i.community}</p>
-                <p>adress:{i.adress}</p>
-                <p>organizer:{i.username}</p>
-                <p>info:{i.info}</p>
+                <FaTimes 
+                  style={{cursor: 'pointer', 
+                  position:'relative', 
+                  left:'360px',
+                  top: '-60px',
+                  color:'#F04141'
+                }} onClick={handleCancle}/>
+                <h2>Title:{i.title}</h2>
+                <div className='container'>
+                  <div className='info'>
+                    <h3>Details:</h3>
+                    <p>{i.info}</p>
+                  </div>
+                  <div className='timeAdress'>
+                    <p>time:{i.time}</p>
+                    <p>community:{i.community}</p>
+                    <p>adress:{i.adress}</p>
+                  </div>
+                </div>
+                <h4>Organizer:{i.username}</h4>
                 <JoinAct item={i}/>
               </div>  
               ))}
-          </div>
+          </>
         </StyledActItem>
       )
 }

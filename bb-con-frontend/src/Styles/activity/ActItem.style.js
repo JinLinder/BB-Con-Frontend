@@ -5,14 +5,29 @@ margin: 0;
 height:100vh;
 background-color: ${({theme})=>theme.colors.background};
 display: flex;
-flex-direction: column;
 justify-content:center;
 align-items: center;
 
-div{
+.container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content:center;
     align-items: center;
+    
+}
+
+.info, .timeAdress{
+    margin: 0px 10px 0px 10px;
+    background-color:white;
+    padding: 0px 60px 0px 60px;
+    border-radius: 15px;
+}
+
+.info{
+    width: 80%
+}
+.timeAdress{
+    width: 20%
 }
 
 `

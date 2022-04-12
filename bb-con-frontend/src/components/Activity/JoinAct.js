@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { StyledJoinAct } from "../../Styles/activity/JoinAct.style";
 
 export default function JoinAct(props) {
 
   const [participants, setParticipants] = useState(props.item.participants);
   const [organizer, setOrganizer] = useState(props.item.username);
+
   //get logined user
   const loginUser = localStorage.getItem("user");
   console.log("participants:", participants, "organizer:", organizer, "loginUser", loginUser )
@@ -56,20 +58,20 @@ export default function JoinAct(props) {
   )
 
   if(loginUser===organizer) {
-    return <div>
-              <p>participants:{participants} </p>
+    return <StyledJoinAct> <div>
+              <div className="joiner">Participants:{participants.map((participant)=>(<p className="part">{participant}</p>))} </div>
               <button onClick={cancleAct}>Cancle event</button>
-            </div>
+            </div></StyledJoinAct>
   } else if (findParticipant) {
-    return <div>
-              <p>participants:{participants} </p>
+    return <StyledJoinAct><div>
+              <div className="joiner">Participants:{participants.map((participant)=>(<p className="part">{participant}</p>))} </div>
               <button onClick={resign}>Resign</button>
-            </div>
+            </div></StyledJoinAct>
   } else {
-    return <div>
-              <p>participants:{participants} </p>
+    return <StyledJoinAct><div>
+              <div className="joiner">Participants:{participants.map((participant)=>(<p className="part">{participant}</p>))} </div>
               <button onClick={join}>Join</button>
-            </div>
+            </div></StyledJoinAct>
   }
 }
 
