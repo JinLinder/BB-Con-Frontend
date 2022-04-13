@@ -51,14 +51,16 @@ export default function ActHome() {
    const handleCreateA =()=>{
      navigate("/activity/add")
    }
-   //handle show my activity
-   const showMyAct=()=>{
-     
+
+   //handle crete activity
+
+   const handleAllA =()=>{
+    setOutput(allActs)
    }
   return (
     <StyledActHome>
       <div>
-        <button onClick={showMyAct}>My activities</button>
+
         <h3>Search activities</h3>
           <select name="location" id=""
             onChange={(e)=>{setSearch({...search, community: e.target.value})}}
@@ -68,11 +70,12 @@ export default function ActHome() {
               <option value="Sollentuna">Sollentuna</option>
               <option value="Solna">Solna</option>
           </select>
-          <input type="datetime-local"
+          <input type="date"
           onChange={(e)=>{setSearch({...search, time: e.target.value})}}
           />  <br />
           <br />
           <button onClick={handleCreateA}>Create activity</button>
+          <button onClick={handleAllA}>All activities</button>
           <div className='activityCards'>
             {outPut.map((act) => ( <ActList
                                     key={act.actId}

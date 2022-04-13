@@ -85,12 +85,16 @@ export default function Comments(props) {
               <div className='likeIcon'>{likeElement} {likesNummber} </div> 
               <div className='commentIcon'> <a href="#comment">comment</a> <FaComment style={{color:'grey'}}/></div>
             </div> 
-           
-            {comments.map((com)=>(<div className='comment'><p className='user'>{com.user}</p>
-            <p className='commentText'> {com.text}</p></div>))}
-            <input type="text" placeholder='Write your comment here'
+            <div className='commentContainer'>
+              {comments.map((com)=>(
+                <div className='comment'>
+                  <p className='user'>{com.user}</p>
+                  <p className='commentText'> {com.text}</p></div>))
+              }
+            </div>
+              <input type="text" placeholder='Write your comment here'
                 onChange={(e)=>setInputValue( e.target.value)}
-            />           
+              />           
             <button id="comment" onClick={sendComment} >send</button>
     </div>
     </StyledComments>

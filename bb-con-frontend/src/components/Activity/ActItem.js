@@ -40,16 +40,16 @@ export default function ActItem() {
                   background:'grey',
                   
                 }} onClick={handleCancle}/>
-                <h2>Title:{i.title}</h2>
+                <h2>{i.title}</h2>
                 <div className='container'>
                   <div className='info'>
                     <h3>Details:</h3>
                     <p>{i.info}</p>
                   </div>
                   <div className='timeAdress'>
-                    <p>time:{i.time}</p>
-                    <p>community:{i.community}</p>
-                    <p>adress:{i.adress}</p>
+                    <p>{i.time}</p>
+                    <p>Community:{i.community}</p>
+                    <p>{i.adress}</p>
                   </div>
                 </div>
                 <h4>Organizer:{i.username}</h4>

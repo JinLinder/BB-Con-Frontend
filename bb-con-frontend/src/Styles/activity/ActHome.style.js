@@ -21,7 +21,8 @@ select, input {
     height:25px;
 }
 button {
-    width: 150px;
+    width: 120px;
     height: 30px;
+    margin: 0px 5px 0px 5px
 }
 `

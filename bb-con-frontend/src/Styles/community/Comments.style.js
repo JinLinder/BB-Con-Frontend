@@ -9,13 +9,16 @@ export const StyledComments = styled.div`
     }
     .comment{
         display: flex;
-         flex-direction: row ;
+        flex-direction: row ;
     }
     .user, .commentText{
         margin: 10px 10px 0px 10px;
         
     }
-
+    .commentContainer{
+        display: flex;
+        flex-direction: column;
+    }
     .commentText{
         border-radius: 10px;
         min-width:200px;

@@ -8,6 +8,7 @@ display: flex;
 flex-direction:column;
 justify-content:center;
 align-items: center;
+
 .author{
     color:grey
 }

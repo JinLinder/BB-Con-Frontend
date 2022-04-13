@@ -2,7 +2,7 @@ import styled from "styled-components";
 import heart from "../pic/heart.jpg";
 
 export const StyledCreateAct = styled.div`
-margin: 0;
+margin: auto;
 height:100vh;
 position:relative;
 display: flex;
