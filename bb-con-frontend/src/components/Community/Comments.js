@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
-
-
 import { FaThumbsUp, FaComment } from 'react-icons/fa'
+import { StyledComments } from '../../Styles/community/Comments.style';
+
 export default function Comments(props) {
     const user = localStorage.getItem("user");
     const [inputValue, setInputValue] = useState("");
@@ -16,10 +16,10 @@ export default function Comments(props) {
     
     useEffect(()=>{
       if(result){
-        setLikeElement([<FaThumbsUp onClick={unLike} style = {{color:"blue"}}/>]);
+        setLikeElement([<FaThumbsUp onClick={unLike} style = {{cursor: 'pointer',color:"blue"}}/>]);
         
       } else if (!result) {
-        setLikeElement([ <FaThumbsUp onClick={like} style = {{color:"grey"}}/>]);
+        setLikeElement([ <FaThumbsUp onClick={like} style = {{cursor: 'pointer',color:"grey"}}/>]);
         
       }
     }, [likes])
@@ -79,15 +79,20 @@ export default function Comments(props) {
     
 
   return (
-    <div>
-            <div>{likeElement} {likesNummber}   <a href="#comment">comment</a> <FaComment/></div> 
+    <StyledComments>
+    <div className='container'>
+            <div className='icon'>
+              <div className='likeIcon'>{likeElement} {likesNummber} </div> 
+              <div className='commentIcon'> <a href="#comment">comment</a> <FaComment style={{color:'grey'}}/></div>
+            </div> 
            
-            <p>Comments:{comments.map((com)=>(<div><p>user: {com.user}</p>
-            <p>text: {com.text}</p></div>))}</p>
-            <input type="text" 
+            {comments.map((com)=>(<div className='comment'><p className='user'>{com.user}</p>
+            <p className='commentText'> {com.text}</p></div>))}
+            <input type="text" placeholder='Write your comment here'
                 onChange={(e)=>setInputValue( e.target.value)}
             />           
             <button id="comment" onClick={sendComment} >send</button>
     </div>
+    </StyledComments>
   )
 }

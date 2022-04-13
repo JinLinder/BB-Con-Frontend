@@ -17,4 +17,10 @@ margin:20px 20px 0px 20px;
     color: black;
     text-align: left;
 }
+.title{
+    font-weight: bold
+}
+.author{
+    color: grey;
+}
 `

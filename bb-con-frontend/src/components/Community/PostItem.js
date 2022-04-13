@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
+import { StyledPostItem } from '../../Styles/community/PostItem.style';
 import Comments from './Comments';
 
 export default function PostItem() {
@@ -22,18 +23,16 @@ export default function PostItem() {
 
     
   return (
-    <div>
-        <h3>Ariticle</h3>
-        {item.map((i)=>( <div key={i.postId}>
-            <p>Author:{i.author}</p>
-            <p>Title:{i.title}</p>
-            <p>Text:{i.text}</p>
-            {/* <p>Comments:{i.comments.map((com)=>(<div><p>user: {com.user}</p>
-            <p>text: {com.text}</p></div>))}</p> */}
-            <Comments item={i}/>
-        </div>
-        ))}
-        
-    </div>
+    <StyledPostItem>
+      <div>
+          {item.map((i)=>( <div key={i.postId}>
+              <h3>{i.title}</h3>
+              <p className='author'>Author:{i.author}</p>
+              <p className='text'>{i.text}</p>
+              <Comments item={i}/>
+          </div>
+          ))}   
+      </div>
+    </StyledPostItem>
   )
 }
