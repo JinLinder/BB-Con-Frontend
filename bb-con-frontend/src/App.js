@@ -23,7 +23,7 @@ import { NavLink } from 'react-router-dom';
 function App() {
 const loginTaken = useSelector(state => state.loginTaken)
 console.log(loginTaken);
-const dispatch = useDispatch
+const dispatch = useDispatch()
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
@@ -33,7 +33,7 @@ const dispatch = useDispatch
         <ul className="header">
           <li className="logo"><NavLink className="logoLink" to="/home">BB-CON</NavLink></li>
           <li className="profile"><NavLink className="nav" to="/userProfile">My profile</NavLink></li>
-          <li className="logout"><NavLink className="nav"  to="/" onClick={() => dispatch({type: 'user logout'}) }>log out</NavLink></li>   
+          <li className="logout"><NavLink className="nav"   onClick={() => dispatch({type: 'user logout'})} to="/">log out</NavLink></li>   
         </ul> 
       : (loginTaken===false) ? 
       
