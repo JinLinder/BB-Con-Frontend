@@ -6,7 +6,7 @@ border-style: groove ;
 border-radius: 15px;
 background-color:white;
 margin:20px 20px 0px 20px;
-
+padding:0px 20px 0px 20px;
 :hover{
     transform: scale(1.05);
     background-color:#C2DFEE;

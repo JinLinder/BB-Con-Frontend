@@ -38,10 +38,9 @@ export default function Login() {
       console.log("data",data);
       if(data.message===`User: ${login.username} loged in.`) {
         console.log("if works");
-        localStorage.setItem("user", login.username)
-        navigate("/home")
-        
+        localStorage.setItem("user", login.username)         
         dispatch({type: 'user login'})
+        navigate("/home")
         
       }
     })
