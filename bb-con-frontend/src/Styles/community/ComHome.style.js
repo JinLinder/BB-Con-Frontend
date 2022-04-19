@@ -21,9 +21,27 @@ input {
     height:25px;
 }
 
+a {
+    text-decoration:none;
+    color: ${({theme})=>theme.colors.light}; 
+}
+
 button {
     width: 150px;
     height: 30px;
+    margin: 0rem 1rem 0rem 1rem
 }
 
+.allPosts{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content:center;
+    color: ${({theme})=>theme.colors.light}
+}
+
+.allPosts:hover{
+    transform: scale(1.05);
+    color: ${({theme})=>theme.colors.dark}
+}
 `

@@ -42,6 +42,18 @@ button {
 }
 a {
     text-decoration:none;
+    color: ${({theme})=>theme.colors.light};
     
+}
+.allAct{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content:center;
+    color: ${({theme})=>theme.colors.light}
+};
+.allAct:hover{
+    transform: scale(1.05);
+    color: ${({theme})=>theme.colors.dark}
 }
 `

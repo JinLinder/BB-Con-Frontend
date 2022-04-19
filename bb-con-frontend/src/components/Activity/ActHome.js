@@ -26,7 +26,7 @@ export default function ActHome() {
   useEffect(()=>{
     //search only by community
     if(search.community){
-      const result = allActs.filter(act=>{return act.community===search.community})
+      const result = allActs.filter(act=>{return act.community.includes(search.community)})
       setOutput(result)
       console.log("search.community")
     }
@@ -40,7 +40,7 @@ export default function ActHome() {
     //search by both
     if(search.community && search.time){
       const result= allActs.filter(
-        act=>{return act.community===search.community && act.time.includes(search.time)}
+        act=>{return act.community.includes(search.community) && act.time.includes(search.time)}
       )
       setOutput(result)
       console.log(result)
@@ -53,11 +53,11 @@ export default function ActHome() {
    //handle crete activity
    const navigate=useNavigate()
 
-  //  const handleCreateA =()=>{
-  //    navigate("/activity/add")
-  //  }
+   const handleCreateA =()=>{
+     navigate("/activity/add")
+   }
 
-   //handle crete activity
+
 
    const handleAllA =()=>{
     setOutput(allActs)
@@ -76,7 +76,6 @@ export default function ActHome() {
       <div>
         <div>
           <h2>Activities</h2>       
-          <a href="http://localhost:3000/activity/add"> Want to create activity? </a><FaArrowRight/>
         </div>
         <div className='search'>
           <FaSearch/>
@@ -94,13 +93,14 @@ export default function ActHome() {
           
         </div>
           <button onClick={handleMyA}>My activities</button>
-          <button onClick={handleAllA}>All activities</button>
+          <button onClick={handleCreateA}>Create activity</button>
           <div className='activityCards'>
             {outPut.map((act) => ( <ActList
                                     key={act.actId}
                                     act={act}
                                     />)
-            )}
+            )} 
+           <div className='allAct'> <a href="#" onClick={handleAllA}>All activities</a> <FaArrowRight/></div>
           </div>
       </div>
     </StyledActHome>

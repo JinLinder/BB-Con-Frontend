@@ -7,8 +7,6 @@ export default function UserProfile() {
   console.log(userName)
 
   const [user, setUser] = useState([]);
-  const [activities, setActivities] = useState([]); 
-  const [posts, setPosts] = useState([]);
 
 
   //get user information
@@ -20,11 +18,11 @@ export default function UserProfile() {
   );
 
   //get users activities
-  const getActivities = ()=>{
-      fetch(`http://localhost:5000/activity/${userName}`)
-      .then(res=>res.json())
-      .then(data=>{setActivities(data);console.log(data)})
-  }
+  // const getActivities = ()=>{
+  //     fetch(`http://localhost:5000/activity/${userName}`)
+  //     .then(res=>res.json())
+  //     .then(data=>{setActivities(data);console.log(data)})
+  // }
     
 
   //get users posts
@@ -45,8 +43,8 @@ export default function UserProfile() {
             <div className='profileInfo'><h4>Location:</h4>
             <p> {user.location}</p></div>
             
-            <button onClick={getActivities}>My activities</button>
-            <button>My posts</button>
+            {/* <button onClick={getActivities}>My activities</button>
+            <button>My posts</button> */}
           </div>
         ))}
       </div>

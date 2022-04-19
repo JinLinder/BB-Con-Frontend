@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { StyledComHome } from '../../Styles/community/ComHome.style';
 import PostList from './PostList';
+import {FaArrowRight} from 'react-icons/fa';
 
 export default function ComHome() {
   const [allPosts, setAllPosts] = useState([]);
@@ -47,18 +48,18 @@ export default function ComHome() {
 }
   //show my posts
 
-  const allPost = () => {
+  const handleAllP = () => {
     setOutput(allPosts)
 }
   return (
     <StyledComHome>
       <div>
-        <h1>Community Home</h1> <button onClick={createPost} >Share something</button>
+        <h1>Community Home</h1> 
         <input type="text" placeholder='Search'
           onChange={(e)=>{setSearch({...search, searchWords: e.target.value})}}/> <br /><br />
 
         <button onClick={myPost} >My posts</button>
-        <button onClick={allPost} >All posts</button>
+        <button onClick={createPost} >Share something</button>
         <div className='articleCards'>
           {
             outPut.map((post)=>(
@@ -67,6 +68,7 @@ export default function ComHome() {
                 post={post}/>
             ))
           }
+          <div className='allPosts'> <a href="#" onClick={handleAllP}>All posts</a> <FaArrowRight/></div>
         </div> 
       </div>
     </StyledComHome>
