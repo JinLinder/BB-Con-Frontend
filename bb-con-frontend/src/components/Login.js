@@ -1,17 +1,25 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import {StyledLogin} from '../Styles/Login.style'
 import {FaTimes} from 'react-icons/fa';
 import {useSelector, useDispatch} from 'react-redux'
 
 export default function Login() {
+
+  //get loginTaken state from redux
   const loginTaken = useSelector(state => state.loginTaken);
   console.log(loginTaken);
-   const dispatch = useDispatch()
 
   const [login, setLogin] = useState({username:"", password:""})
+  const dispatch = useDispatch()
   const navigate = useNavigate()
+
+//restrict user from visiting login routes once user is loged in. 
+  useEffect( () => {
+    if(loginTaken===true) {
+      navigate("/home")
+    }
+  }, [])
 
 //handle login
   const handleLogin = (evt)=>{

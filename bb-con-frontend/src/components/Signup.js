@@ -1,18 +1,29 @@
 import React from 'react';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StyledSignUp } from '../Styles/SignUp.style';
 import {FaTimes} from 'react-icons/fa';
-import { useDispatch} from 'react-redux'
+import { useSelector, useDispatch} from 'react-redux'
+
 export default function Signup() {
   const [signup, setSignup]=useState({
     username:"",
     password:"",
     babyAge:"",
     location:""
-  })
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  });
+  //get loginTaken state from redux
+  const loginTaken = useSelector(state => state.loginTaken);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  //restrict user from visiting login routes once user is loged in. 
+  useEffect( () => {
+    if(loginTaken===true) {
+      navigate("/home")
+    }
+  }, [])
+
 //handle signup
   const handleSignup = (evt)=>{
     evt.preventDefault();

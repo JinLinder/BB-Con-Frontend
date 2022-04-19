@@ -18,7 +18,8 @@ import {useSelector, useDispatch} from 'react-redux'
 import PostItem from './components/Community/PostItem';
 import CreateSuccess from './components/Activity/CreateSuccess';
 import ShareSuccess from './components/Community/ShareSuccess';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import ProtectedRoutes from './components/ProtectedRoutes';
 
 function App() {
 const loginTaken = useSelector(state => state.loginTaken)
@@ -45,9 +46,7 @@ const dispatch = useDispatch()
       : <div></div>}
 
       <Routes>
-          <Route exact path="/" element={<Start/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/signup" element={<Signup/>}/>
+        <Route element={<ProtectedRoutes/>}>
           <Route path="/home" element={<Home/>}/>
           <Route path="/activity" element={<ActHome/>}/>
           <Route path="/activity/add" element={<CreateAct/>}/>
@@ -58,6 +57,13 @@ const dispatch = useDispatch()
           <Route path="/community/post/:postId" element={<PostItem/>}/>
           <Route path="/community/shareSuccess" element={<ShareSuccess/>}/>
           <Route path="/user/:userProfile" element={<UserProfile/>}/> 
+        </Route>      
+        <Route exact path="/" element={<Start/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+       
+            
+
       </Routes>
     </Router>
     </div>
