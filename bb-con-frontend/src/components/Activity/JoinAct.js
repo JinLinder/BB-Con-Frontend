@@ -32,7 +32,7 @@ export default function JoinAct(props) {
 //handle cancle activity function
   const cancleAct= () => {
     fetch(`http://localhost:5000/activity/item/delete/${props.item.actId}`, 
-      {method:"DELETE"})
+      {method:"DELETE",})
       .then((res)=>{res.json()})
       .then(data=>console.log(data))
     console.log("event deleted")

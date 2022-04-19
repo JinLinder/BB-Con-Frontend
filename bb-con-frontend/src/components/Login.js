@@ -65,7 +65,7 @@ export default function Login() {
           onChange={(e)=>setLogin({...login, username: e.target.value})}
         />
         <label htmlFor="password"> Password </label>
-        <input type="text" 
+        <input type="password" 
           value={login.password}
           onChange={(e)=>setLogin({...login, password: e.target.value})}
         />

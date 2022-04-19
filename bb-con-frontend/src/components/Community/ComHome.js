@@ -8,14 +8,17 @@ export default function ComHome() {
   const [search, setSearch] = useState({});
   const [outPut, setOutput]= useState([]);
 
-  //fetch all the posts
+  const userName = localStorage.getItem("user")
+  console.log(userName)
 
+  //fetch all the posts
   useEffect(()=>{
     fetch('http://localhost:5000/community/')
       .then(res=>res.json())
       .then(data=>{console.log(data); setAllPosts(data); setOutput(data)})
     }, 
   []);
+
   // handle search
   useEffect(()=>{
     if(search.searchWords!=null){
@@ -29,26 +32,33 @@ export default function ComHome() {
     }, [search]
   )
   
-  // add new post to the allPosts state
-    const addPost = (newPost) => {
-        setAllPosts([...allPosts, newPost])
-    }
-
 
   //create new post
   const navigate=useNavigate()
   const createPost=()=>{
     navigate("/community/add")
   }
-  
+
+  //show all posts
+  const myPost = () => {
+    const result= allPosts.filter(allPost=>allPost.author===userName);
+    console.log(result)
+    setOutput(result)
+}
+  //show my posts
+
+  const allPost = () => {
+    setOutput(allPosts)
+}
   return (
     <StyledComHome>
       <div>
-        <h1>Community Home</h1>
+        <h1>Community Home</h1> <button onClick={createPost} >Share something</button>
         <input type="text" placeholder='Search'
           onChange={(e)=>{setSearch({...search, searchWords: e.target.value})}}/> <br /><br />
 
-        <button onClick={createPost} >Share something</button>
+        <button onClick={myPost} >My posts</button>
+        <button onClick={allPost} >All posts</button>
         <div className='articleCards'>
           {
             outPut.map((post)=>(

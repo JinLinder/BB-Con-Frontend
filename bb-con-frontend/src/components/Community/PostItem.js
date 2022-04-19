@@ -11,16 +11,28 @@ export default function PostItem() {
     console.log("postId:", params.postId);
     const url = `http://localhost:5000/community/item/${params.postId}`;
 
-     //get the post with post Id
+    //get the post with post Id
     useEffect(()=>{
       fetch(url)
         .then(res=>res.json())
         .then(data=>{setItem(data); console.log(data)}  )
     },
     [url])
+
     //handle cancle
     const navigate = useNavigate()
     const handleCancle=()=>{
+      navigate("/community")
+    }
+
+    //handle delete
+    const handleDelete = () => {
+      fetch(`http://localhost:5000/community/item/delete/${params.postId}`,
+      {method:"DELETE"})
+      .then((res)=>{res.json()})
+      .then(data=>console.log(data))
+      .catch(err => console.log(err));
+      console.log("event deleted")
       navigate("/community")
     }
     
@@ -28,6 +40,7 @@ export default function PostItem() {
     <StyledPostItem>
       <div>
           {item.map((i)=>( <div key={i.postId}>
+            
             <FaTimes 
               style={{cursor: 'pointer', 
                   position:'relative', 
@@ -36,8 +49,9 @@ export default function PostItem() {
                   color:'#F04141',
                   background:'grey',
                 }}
-          onClick={handleCancle}/>
+              onClick={handleCancle}/>
               <h3>{i.title}</h3>
+              <button onClick={handleDelete}>Delete</button>
               <p className='author'>Author:{i.author}</p>
               <p className='text'>{i.text}</p>
               <Comments item={i}/>

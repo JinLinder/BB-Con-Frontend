@@ -58,6 +58,7 @@ export default function Comments(props) {
         .catch((err)=>{console.log("err", err)})
       }, [likes]
     )
+    
     //uppdate comments in backend
     useEffect(()=>{
       console.log("comments:", comments);

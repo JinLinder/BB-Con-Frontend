@@ -8,7 +8,9 @@ export default function ActHome() {
   const [allActs, setAllActs] = useState([]);
   const [search, setSearch] = useState({});
   const [outPut, setOutput]= useState([]);
-
+  
+  const userName = localStorage.getItem("user")
+  console.log(userName)
 
   //fetch all the activities
   useEffect(()=>{
@@ -57,6 +59,12 @@ export default function ActHome() {
    const handleAllA =()=>{
     setOutput(allActs)
    }
+
+   //handle my activity
+   const handleMyA =()=>{
+    const result = allActs.filter(act=> act.username===userName);
+    setOutput(result)
+   }
   return (
     <StyledActHome>
       <div>
@@ -74,8 +82,9 @@ export default function ActHome() {
           onChange={(e)=>{setSearch({...search, time: e.target.value})}}
           />  <br />
           <br />
-          <button onClick={handleCreateA}>Create activity</button>
           <button onClick={handleAllA}>All activities</button>
+          <button onClick={handleCreateA}>Create activity</button>
+          <button onClick={handleMyA}>My activities</button>
           <div className='activityCards'>
             {outPut.map((act) => ( <ActList
                                     key={act.actId}

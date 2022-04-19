@@ -1,7 +1,7 @@
 
 import './App.css';
 import Start from './components/Start';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home'
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -32,7 +32,7 @@ const dispatch = useDispatch()
       {(loginTaken===true) ? 
         <ul className="header">
           <li className="logo"><NavLink className="logoLink" to="/home">BB-CON</NavLink></li>
-          <li className="profile"><NavLink className="nav" to="/userProfile">My profile</NavLink></li>
+          <li className="profile"><NavLink className="nav" to="/user/:userProfile">My profile</NavLink></li>
           <li className="logout"><NavLink className="nav"   onClick={() => dispatch({type: 'user logout'})} to="/">log out</NavLink></li>   
         </ul> 
       : (loginTaken===false) ? 
@@ -57,7 +57,7 @@ const dispatch = useDispatch()
           <Route path="/community/add" element={<CreatePost/>}/>
           <Route path="/community/post/:postId" element={<PostItem/>}/>
           <Route path="/community/shareSuccess" element={<ShareSuccess/>}/>
-          <Route path="/userProfile" element={<UserProfile/>}/> 
+          <Route path="/user/:userProfile" element={<UserProfile/>}/> 
       </Routes>
     </Router>
     </div>
