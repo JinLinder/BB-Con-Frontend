@@ -69,9 +69,9 @@ export default function Signup() {
             onChange={(e)=>setSignup({...signup, babyAge: e.target.value})}
           >
             <option value="" disabled selected>choose your baby's age</option>
-            <option value="less than 1">0-1 year</option>
-            <option value="1-2">1-2 years</option>
-            <option value="more than 2">More than 2 years</option>
+            <option value="less than 1 year old">0-1 year</option>
+            <option value="1-2 years old">1-2 years</option>
+            <option value="more than 2 years old">More than 2 years</option>
           </select>
           
           <label htmlFor="location">Location </label>

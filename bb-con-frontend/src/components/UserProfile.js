@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { StyledUserProfile } from '../Styles/UserProfile.style';
 
 export default function UserProfile() {
 
@@ -31,18 +32,28 @@ export default function UserProfile() {
 
 
   return (
-    <div>
-      <h3>UserProfile</h3>
-      {user.map((user)=>(
-        <div key={user._id}>
-          <p>Username: {user.username}</p>
-          <p>Baby's age: {user.babyAge}</p>
-          <p>Location: {user.location}</p>
-          <button onClick={getActivities}>My activities</button>
-          <button>My posts</button>
-        </div>
-      ))}
-      
-    </div>
+    <StyledUserProfile>
+      <>
+      <div className='container'>
+        <h3>UserProfile</h3>
+        {user.map((user)=>(
+          <div key={user._id}>
+            <div className='profileInfo'><h4>Username:</h4>
+            <p> {user.username}</p></div>
+            <div className='profileInfo'><h4>Baby's age:</h4>
+            <p> {user.babyAge}</p></div>
+            <div className='profileInfo'><h4>Location:</h4>
+            <p> {user.location}</p></div>
+            
+            <button onClick={getActivities}>My activities</button>
+            <button>My posts</button>
+          </div>
+        ))}
+      </div>
+      {/* {
+        activities.map((act)=>())
+      } */}
+    </>
+    </StyledUserProfile>
   )
 }

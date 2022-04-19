@@ -1,13 +1,15 @@
-import React, { useEffect, useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { StyledActHome } from '../../Styles/activity/ActHome.style';
-import ActList from './ActList'
+import ActList from './ActList';
+import {FaSearch,FaArrowRight} from 'react-icons/fa';
 
 export default function ActHome() {
 
   const [allActs, setAllActs] = useState([]);
   const [search, setSearch] = useState({});
   const [outPut, setOutput]= useState([]);
+  // const [myActChecked, setMyActChecked] = useState(false)
   
   const userName = localStorage.getItem("user")
   console.log(userName)
@@ -50,9 +52,10 @@ export default function ActHome() {
 
    //handle crete activity
    const navigate=useNavigate()
-   const handleCreateA =()=>{
-     navigate("/activity/add")
-   }
+
+  //  const handleCreateA =()=>{
+  //    navigate("/activity/add")
+  //  }
 
    //handle crete activity
 
@@ -62,14 +65,21 @@ export default function ActHome() {
 
    //handle my activity
    const handleMyA =()=>{
-    const result = allActs.filter(act=> act.username===userName);
+
+      const result = allActs.filter(act=> act.username===userName);
     setOutput(result)
+     
+    
    }
   return (
     <StyledActHome>
       <div>
-
-        <h3>Search activities</h3>
+        <div>
+          <h2>Activities</h2>       
+          <a href="http://localhost:3000/activity/add"> Want to create activity? </a><FaArrowRight/>
+        </div>
+        <div className='search'>
+          <FaSearch/>
           <select name="location" id=""
             onChange={(e)=>{setSearch({...search, community: e.target.value})}}
             >
@@ -80,11 +90,11 @@ export default function ActHome() {
           </select>
           <input type="date"
           onChange={(e)=>{setSearch({...search, time: e.target.value})}}
-          />  <br />
-          <br />
-          <button onClick={handleAllA}>All activities</button>
-          <button onClick={handleCreateA}>Create activity</button>
+          />  
+          
+        </div>
           <button onClick={handleMyA}>My activities</button>
+          <button onClick={handleAllA}>All activities</button>
           <div className='activityCards'>
             {outPut.map((act) => ( <ActList
                                     key={act.actId}
