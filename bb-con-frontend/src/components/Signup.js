@@ -71,7 +71,7 @@ export default function Signup() {
             onChange={(e)=>setSignup({...signup, username: e.target.value})}
           />
           <label htmlFor="password">Password </label>
-          <input type="text" 
+          <input type="password" 
             onChange={(e)=>setSignup({...signup, password: e.target.value})}
           /> 
           <label htmlFor="babyAge">Baby's age </label>

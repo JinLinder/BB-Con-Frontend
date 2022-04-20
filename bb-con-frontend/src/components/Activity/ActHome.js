@@ -18,7 +18,7 @@ export default function ActHome() {
   useEffect(()=>{
     fetch('http://localhost:5000/activity/')
           .then(res=>res.json())
-          .then(data=>{console.log(data); setAllActs(data);setOutput(data)})
+          .then(data=>{setOutput(data);  setAllActs(data); console.log(data);})
     }, 
   [])
   

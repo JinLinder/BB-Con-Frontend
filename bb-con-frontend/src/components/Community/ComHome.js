@@ -16,7 +16,7 @@ export default function ComHome() {
   useEffect(()=>{
     fetch('http://localhost:5000/community/')
       .then(res=>res.json())
-      .then(data=>{console.log(data); setAllPosts(data); setOutput(data)})
+      .then(data=>{console.log(data); setOutput(data);setAllPosts(data) })
     }, 
   []);
 
