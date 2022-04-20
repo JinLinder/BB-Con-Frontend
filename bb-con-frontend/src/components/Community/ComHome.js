@@ -32,7 +32,6 @@ export default function ComHome() {
     }
     }, [search]
   )
-  
 
   //create new post
   const navigate=useNavigate()
@@ -40,21 +39,20 @@ export default function ComHome() {
     navigate("/community/add")
   }
 
-  //show all posts
+  //show my posts
   const myPost = () => {
     const result= allPosts.filter(allPost=>allPost.author===userName);
     console.log(result)
     setOutput(result)
 }
-  //show my posts
-
+  //show all posts
   const handleAllP = () => {
     setOutput(allPosts)
 }
   return (
     <StyledComHome>
       <div>
-        <h1>Community Home</h1> 
+        <h1>Welcome to the community!</h1> 
         <input type="text" placeholder='Search'
           onChange={(e)=>{setSearch({...search, searchWords: e.target.value})}}/> <br /><br />
 

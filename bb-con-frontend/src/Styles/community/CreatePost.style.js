@@ -12,44 +12,79 @@ align-items: center;
 &::before {
     content: '';
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
     background-image: url(${heart});
     background-position: center;
     background-size: cover;
     opacity: 0.5;
 }
 div{
-    width: 400px;
+    width: 25rem;
     position:relative;
     display: flex;
     flex-direction:column;
     justify-content: center;
     align-items: center; 
-    border: 2px solid #737171; 
-    border-radius: 40px; 
-    box-shadow: 4px 4px #878787;
+    border: 0.125rem solid #737171; 
+    border-radius: 2.5rem; 
+    box-shadow: 0.25rem 0.25rem #878787;;
 }
 
 input {
-    width: 250px;
-    height:30px;
-    border-radius: 30px;
-    margin-top:10px;
-    margin-bottom:20px;
-    font-size: 13px;
+    width: 15.5rem;
+    height:1.8rem;
+    border-radius: 1.8rem;
+    margin-top:0.6rem;
+    margin-bottom:1.2rem;
+    font-size: 0.8rem;
  }
+
  button {
     font-weight: 700;
     font-size: 1.2rem;
-    width: 150px;
-    height:40px;
-    margin: 10px 0px 10px 0px;   
+    width: 9.4rem;
+    height:2.5rem;
+    margin: 0.625rem 0rem 0.625rem 0rem;  
 }
 
 textarea {
-    width: 300px;
+    width: 18.75rem;
+}
+
+@media (max-width: 767px) {
+    div{
+        width: 18rem;
+        border: 0.1rem solid #737171; 
+        border-radius: 2.5rem; 
+        box-shadow: 0.15rem 0.15rem #878787;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+    input{
+        width: 10rem;
+        height:1.3rem;
+        border-radius: 1rem;
+        margin-top:0.6rem;
+        margin-bottom:1rem;
+        font-size: 0.7rem;
+    }
+
+    textarea {
+        width: 12rem;
+    }
+
+    button {
+        font-weight: 700;
+        font-size: 0.8rem;
+        width: 7rem;
+        height:2rem;
+        margin: 0.625rem 0rem 0.625rem 0rem;   
+    }
 }
 `

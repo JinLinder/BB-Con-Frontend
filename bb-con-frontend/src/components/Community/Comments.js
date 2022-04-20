@@ -5,15 +5,17 @@ import { StyledComments } from '../../Styles/community/Comments.style';
 
 export default function Comments(props) {
     const user = localStorage.getItem("user");
+
     const [inputValue, setInputValue] = useState("");
     const [comments, setComment] = useState(props.item.comments);
     const [likes, setLikes] = useState(props.item.likes)
-    // const [clicked, setClicked] = useState(false)
     const [likeElement, setLikeElement] = useState([])
     const result = likes.find(like=>{return like===user});
+
     const likesNummber = likes.length
     console.log(result)
     
+    //check if loged in user already like the post. Blue color if already like else grey
     useEffect(()=>{
       if(result){
         setLikeElement([<FaThumbsUp onClick={unLike} style = {{cursor: 'pointer',color:"blue"}}/>]);
@@ -29,6 +31,7 @@ export default function Comments(props) {
       const filterResult = likes.filter(like=>{return like!==user});
       setLikes(filterResult);
     }
+
     //handle like
     const like = ()=>{
       setLikes([...likes, user]);
@@ -82,20 +85,21 @@ export default function Comments(props) {
   return (
     <StyledComments>
     <div className='container'>
-            <div className='icon'>
-              <div className='likeIcon'>{likeElement} {likesNummber} </div> 
-              <div className='commentIcon'> <a href="#comment">comment</a> <FaComment style={{color:'grey'}}/></div>
-            </div> 
-            <div className='commentContainer'>
-              {comments.map((com)=>(
-                <div className='comment'>
-                  <p className='user'>{com.user}</p>
-                  <p className='commentText'> {com.text}</p></div>))
-              }
-            </div>
-              <input type="text" placeholder='Write your comment here'
-                onChange={(e)=>setInputValue( e.target.value)}
-              />           
+        <div className='icon'>
+          <div className='likeIcon'>{likeElement} {likesNummber} </div> 
+          <div className='commentIcon'> <a href="#comment">comment</a> <FaComment style={{color:'grey'}}/></div>
+        </div> 
+        <div className='commentContainer'>
+            {comments.map((com)=>(
+              <div className='comment'>
+                <p className='user'>{com.user}</p>
+                <p className='commentText'> {com.text}</p>
+              </div>))
+            }
+        </div>
+            <input type="text" placeholder='Write your comment here'
+              onChange={(e)=>setInputValue( e.target.value)}
+            />           
             <button id="comment" onClick={sendComment} >send</button>
     </div>
     </StyledComments>

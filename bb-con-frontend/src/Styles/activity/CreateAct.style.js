@@ -68,6 +68,7 @@ textarea {
     h1{
         font-size: 2rem;
     }
+    
      input, select {
         width: 10rem;
         height:1.3rem;

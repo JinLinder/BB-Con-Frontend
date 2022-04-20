@@ -81,7 +81,6 @@ a {
 
     select, input {
         margin: 0.5rem 0.625rem 0.5rem 0.625rem;
-        // padding:0.625rem 0.625rem 0.625rem 0.625rem;
         border: 0.09rem solid;
         border-radius:0.1875rem;
         width: 9.375rem;

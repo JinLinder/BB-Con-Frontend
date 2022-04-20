@@ -44,7 +44,7 @@ export default function PostItem() {
             <FaTimes 
               style={{cursor: 'pointer', 
                   position:'relative', 
-                  left:'360px',
+                  left:'120px',
                   top:'45px', 
                   color:'#F04141',
                   background:'grey',

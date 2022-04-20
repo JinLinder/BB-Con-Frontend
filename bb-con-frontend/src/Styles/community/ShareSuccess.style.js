@@ -2,7 +2,6 @@ import styled from "styled-components";
 import congret from "../pic/congret.png";
 
 export const StyledShareSuccess = styled.div`
-    
     margin: 0;
     height:100vh;
     position:relative;
@@ -20,7 +19,7 @@ export const StyledShareSuccess = styled.div`
         background-image: url(${congret});
         background-position: center;
         background-size: cover;
-        opacity: 0.5;
+        opacity: 0.3;
     }
 
     div{
@@ -32,11 +31,57 @@ export const StyledShareSuccess = styled.div`
     }
     
     button {
-        margin-left: 30px;
-        margin-right: 30px;
+        margin-left: 1.875rem;
+        margin-right: 1.875rem;
         height: 3rem;
         width: 12rem;
         font-size: 1rem
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+
+        h1{
+            font-size:1.5rem;
+        }
+
+        button {
+            margin-left: 1.875rem;
+            margin-right: 1.875rem;
+            height: 2rem;
+            width: 8rem;
+            font-size: 0.7rem
+        }
+    }
+
+    @media screen and (max-width: 767px){
+        margin: 0;
+        height:100vh;
+        position:relative;
+        display: flex;
+        align-items: flex-start;
+        padding:7rem;
+        
+        div{
+            display: flex;
+            flex-direction:column;
+             justify-content: center;
+            align-items: flex-start;
+            margin: 0rem;
+        }
+        
+        
+        h1{
+            font-size:1.3rem;
+        }
+
+        button {
+            margin: 1rem 1.875rem 1rem 1.875rem;
+            margin-left: 1.875rem;
+            margin-right: 1.875rem;
+            height: 2rem;
+            width: 8rem;
+            font-size: 0.7rem
+        }
     }
 
 `

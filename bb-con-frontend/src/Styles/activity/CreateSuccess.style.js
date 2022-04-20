@@ -19,7 +19,7 @@ export const StyledCreateSuccess = styled.div`
         background-image: url(${congret});
         background-position: center;
         background-size: cover;
-        opacity: 0.5;
+        opacity: 0.3;
     }
 
     div{
@@ -37,6 +37,7 @@ export const StyledCreateSuccess = styled.div`
         width: 12rem;
         font-size: 1rem
     }
+
     @media screen and (min-width: 768px) and (max-width: 1023px) {
 
         h1{
@@ -53,6 +54,13 @@ export const StyledCreateSuccess = styled.div`
     }
 
     @media screen and (max-width: 767px){
+        margin: 0;
+        height:100vh;
+        position:relative;
+        display: flex;
+        align-items: flex-start;
+        padding:7rem;
+
         div{
             display: flex;
             flex-direction:column;
@@ -74,5 +82,5 @@ export const StyledCreateSuccess = styled.div`
             font-size: 0.7rem
         }
     }
-    }
+    
 `
