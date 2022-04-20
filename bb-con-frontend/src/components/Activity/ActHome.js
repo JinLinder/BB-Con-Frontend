@@ -9,7 +9,6 @@ export default function ActHome() {
   const [allActs, setAllActs] = useState([]);
   const [search, setSearch] = useState({});
   const [outPut, setOutput]= useState([]);
-  // const [myActChecked, setMyActChecked] = useState(false)
   
   const userName = localStorage.getItem("user")
   console.log(userName)
@@ -58,18 +57,15 @@ export default function ActHome() {
    }
 
 
-
+  //handle get all activities
    const handleAllA =()=>{
     setOutput(allActs)
    }
 
    //handle my activity
    const handleMyA =()=>{
-
-      const result = allActs.filter(act=> act.username===userName);
-    setOutput(result)
-     
-    
+    const result = allActs.filter(act=> act.username===userName);
+    setOutput(result)  
    }
   return (
     <StyledActHome>
@@ -88,7 +84,7 @@ export default function ActHome() {
               <option value="Solna">Solna</option>
           </select>
           <input type="date"
-          onChange={(e)=>{setSearch({...search, time: e.target.value})}}
+            onChange={(e)=>{setSearch({...search, time: e.target.value})}}
           />  
           
         </div>

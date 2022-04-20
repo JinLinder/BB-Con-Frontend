@@ -11,10 +11,10 @@ export const StyledHome = styled.div`
     &::before {
         content: '';
         position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
+        top: 0rem;
+        right: 0rem;
+        bottom: 0rem;
+        left: 0rem;
         background-image: url(${heart});
         background-position: center;
         background-size: cover;
@@ -29,10 +29,26 @@ export const StyledHome = styled.div`
     }
 
     button {
-        margin-left: 30px;
-        margin-right: 30px;
+        margin-left: 2rem;
+        margin-right: 2rem;
         height: 3rem;
         width: 12rem;
         font-size: 1rem
+    }
+
+    @media (max-width: 767px){
+       h1{
+        font-size: 2rem;
+       } 
+
+       button {
+        margin: 1rem 2rem 1rem 2rem;
+        // margin-left: 2rem;
+        // margin-right: 2rem;
+        height: 2.5rem;
+        width: 9rem;
+        font-size: 0.8rem
+    }
+
     }
 `

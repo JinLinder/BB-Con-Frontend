@@ -57,6 +57,7 @@ export default function JoinAct(props) {
     },[participants]
   )
 
+  //depends on who is the user have different button
   if(loginUser===organizer) {
     return <StyledJoinAct> <div>
               <div className="joiner">Participants:{participants.map((participant)=>(<p className="part">{participant}</p>))} </div>

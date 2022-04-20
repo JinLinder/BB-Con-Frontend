@@ -14,13 +14,13 @@ export default function CreateAct() {
     time:"", 
     info:"",
     participants:[localStorage.getItem("user")]
-  })
+  });
 
-  const [infoElement, setInfoElement] = useState([])
+  const [infoElement, setInfoElement] = useState([]);
 
-  const navigate=useNavigate()
+  const navigate=useNavigate();
 
-  //handle create
+  //handle create activity
   const handleCreate = (evt)=>{
     evt.preventDefault();
     console.log(act);
@@ -41,6 +41,7 @@ export default function CreateAct() {
     }
   }
 
+  // handle cancle create activity
   const handleCancle=()=>{
     navigate("/activity")
   }
@@ -48,15 +49,15 @@ export default function CreateAct() {
   return (
     <StyledCreateAct>
       <div className='container'>
-      <FaTimes 
-          style={{cursor: 'pointer', 
-                  position:'relative', 
-                  left:'160px',
-                  top:'20px', 
-                  color:'#F04141',
-                  background:'grey',
-                }}
-          onClick={handleCancle}/>
+        <FaTimes 
+            style={{cursor: 'pointer', 
+                    position:'relative', 
+                    left:'120px',
+                    top:'20px', 
+                    color:'#F04141',
+                    background:'grey',
+                  }}
+            onClick={handleCancle}/>
         <h1>Create Activity</h1>
       
         <label htmlFor="">Title: </label>

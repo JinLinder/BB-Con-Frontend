@@ -8,10 +8,23 @@ export const StyledJoinAct = styled.div`
     align-items:center;
 }
 .part{
-    padding: 0px 3px 0px 3px
+    padding: 0rem 0.18rem 0rem 0.18rem
 }
 button{
     font-size: 1rem;
-    width: 100px;
-    height:40px;  }
+    width: 6.25rem;
+    height:2.5rem;
+}
+
+@media (max-width: 767px){
+
+    button{
+        font-size: 0.7rem;
+        width: 4rem;
+        height:1.5rem;  
+    }
+    .joiner{
+        font-size: 0.7rem;
+    }
+}
 `

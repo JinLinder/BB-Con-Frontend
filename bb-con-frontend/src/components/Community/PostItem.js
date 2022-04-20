@@ -26,15 +26,15 @@ export default function PostItem() {
     }
 
     //handle delete
-    const handleDelete = () => {
-      fetch(`http://localhost:5000/community/item/delete/${params.postId}`,
-      {method:"DELETE"})
-      .then((res)=>{res.json()})
-      .then(data=>console.log(data))
-      .catch(err => console.log(err));
-      console.log("event deleted")
-      navigate("/community")
-    }
+    // const handleDelete = () => {
+    //   fetch(`http://localhost:5000/community/item/delete/${params.postId}`,
+    //   {method:"DELETE"})
+    //   .then((res)=>{res.json()})
+    //   .then(data=>console.log(data))
+    //   .catch(err => console.log(err));
+    //   console.log("event deleted")
+    //   navigate("/community")
+    // }
     
   return (
     <StyledPostItem>
@@ -51,7 +51,6 @@ export default function PostItem() {
                 }}
               onClick={handleCancle}/>
               <h3>{i.title}</h3>
-              <button onClick={handleDelete}>Delete</button>
               <p className='author'>Author:{i.author}</p>
               <p className='text'>{i.text}</p>
               <Comments item={i}/>

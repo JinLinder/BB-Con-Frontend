@@ -20,6 +20,7 @@ export default function ActItem() {
     },
     [url])
 
+    //handle cancle function
     console.log(localStorage.getItem("user"))
     console.log(item)
     const navigate = useNavigate()
@@ -29,18 +30,17 @@ export default function ActItem() {
       return (
         <StyledActItem>
           <>
-          
               {item.map((i)=>( <div key={i.actId}>
+                <h2>{i.title}</h2>
                 <FaTimes 
                   style={{cursor: 'pointer', 
                   position:'relative', 
-                  left:'360px',
-                  top: '-60px',
+                  left:'150px',
+                  top:'-50px',
                   color:'#F04141',
                   background:'grey',
                   
                 }} onClick={handleCancle}/>
-                <h2>{i.title}</h2>
                 <div className='container'>
                   <div className='info'>
                     <h3>Details:</h3>

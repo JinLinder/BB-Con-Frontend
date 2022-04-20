@@ -59,7 +59,7 @@ export default function Login() {
         <FaTimes 
           style={{cursor: 'pointer', 
                   position:'relative', 
-                  left:'160px',
+                  left:'120px',
                   top:'20px', 
                   color:'#F04141',
                   background:'grey',

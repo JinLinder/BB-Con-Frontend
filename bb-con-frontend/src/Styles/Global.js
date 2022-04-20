@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
     button {
         cursor:pointer;
         background: ${({theme})=>theme.colors.light};
-        border-radius: 90px;
+        border-radius: 5.625rem;
         color: white;
         font-weight: bold;
         
