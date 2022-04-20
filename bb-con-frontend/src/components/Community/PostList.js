@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { StyledPostList } from '../../Styles/community/PostList.style';
 import { NavLink } from 'react-router-dom';
 
