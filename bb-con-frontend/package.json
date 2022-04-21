@@ -6,7 +6,6 @@
     "@react-icons/all-files": "^4.1.0",
     "@react-navigation/native": "^6.0.10",
     "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "cors": "^2.8.5",
@@ -48,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.1.2",
+    "jest-watch-typeahead": "^0.6.5",
+    "react-test-renderer": "^18.0.0"
   }
 }
