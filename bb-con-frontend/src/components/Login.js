@@ -41,12 +41,9 @@ export default function Login() {
         localStorage.setItem("user", login.username)         
         dispatch({type: 'user login'})
         navigate("/home")
-        
       }
     })
-    .catch((err)=>{
-      console.log('err', err)
-    })
+    .catch((err)=>{console.log('err', err)})
   };
 //handle cancle button
   const handleCancle=()=>{
@@ -66,7 +63,7 @@ export default function Login() {
                 }}
           onClick={handleCancle}/>
         <h2>Log in </h2>
-        <label htmlFor="username"> User Name  </label>
+        <label htmlFor="username"> Username  </label>
         <input type="text" 
           value={login.username}
           onChange={(e)=>setLogin({...login, username: e.target.value})}

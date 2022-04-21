@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react';
 import { StyledStart } from '../Styles/Start.style';
 import { useNavigate } from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 export default function Start() {
 
   const navigate = useNavigate()
   const loginTaken = useSelector(state => state.loginTaken);
+  
   //restrict user from visiting start page once user is loged in. 
   useEffect( () => {
     if(loginTaken===true) {
