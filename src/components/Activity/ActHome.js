@@ -1,9 +1,8 @@
 import React, { useEffect, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
 import ActList from './ActList';
 import {FaArrowRight} from 'react-icons/fa';
 import { StyledContainer } from '../../Styles/Home.style';
-import { Container, Row, Col, Form, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 import { IconButton } from '../../Styles/Global';
 import { PlusLg} from "react-bootstrap-icons";
 import CreateAct from './CreateAct';
@@ -51,8 +50,6 @@ export default function ActHome() {
     , [search]
   )
 
-   //handle create activity
-   const navigate=useNavigate()
 
    const handleCreateA =()=>{
     setShowCreate(true);

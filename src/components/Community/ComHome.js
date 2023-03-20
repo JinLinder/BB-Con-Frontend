@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import PostList from './PostList';
 import {FaArrowRight} from 'react-icons/fa';
 import { StyledContainer } from '../../Styles/Home.style';
-import { Container, Row, Col, Form, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 import { IconButton } from '../../Styles/Global';
-import { PlusLg, Search} from "react-bootstrap-icons";
+import { PlusLg} from "react-bootstrap-icons";
 import CreatePost from "./CreatePost";
 
 export default function ComHome() {
@@ -36,12 +35,9 @@ export default function ComHome() {
     }, [search]
   )
 
-  //create new post
-  const navigate=useNavigate()
 
   const createPost=()=>{
     setShowCreate(true);
-    //navigate("/community/add")
   }
   const closeCreateModal = ()=>{
     setShowCreate(false)

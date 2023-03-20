@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { StyledActItem } from '../../Styles/activity/ActItem.style';
 import JoinAct from './JoinAct';
 import { StyledHome } from '../../Styles/Home.style';
 import { Container, Row, Col } from "react-bootstrap";

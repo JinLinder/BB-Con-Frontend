@@ -1,5 +1,4 @@
 import React, {useState, } from 'react';
-import { useNavigate } from 'react-router-dom'
 import {v4 as uuidv4} from 'uuid';
 import {Form, Modal} from 'react-bootstrap';
 import { CloseIcon, HeadingL, ButtonGen, ButtonUnable } from '../../Styles/Global';
@@ -17,15 +16,12 @@ export default function CreateAct(props) {
     participants:[localStorage.getItem("user")]
   });
 
-  const [infoElement, setInfoElement] = useState([]);
 
   const [errTitle, setErrTitle] = useState("");
   const [errCom, setErrCom] = useState("");
   const [errAdress, setErrAdress] = useState("");
   const [errTime, setErrTime] = useState("");
   const [createSucc, setCreateSucc] = useState(false);
-
-  const navigate=useNavigate();
 
   //handle create activity
   const handleCreate = (evt)=>{
@@ -54,13 +50,8 @@ export default function CreateAct(props) {
     props.closeCreateModal();
     props.showNewAct(act);
     } 
-  
   }
-  
-  // handle cancle create activity
-  const handleCancle=()=>{
-    navigate("/home/activity")
-  }
+
 
 // validation
   const validation = (e) =>{

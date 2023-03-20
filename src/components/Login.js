@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import {StyledLogin, LoginModal} from '../Styles/Login.style'
+import {LoginModal} from '../Styles/Login.style'
 import {useSelector, useDispatch} from 'react-redux'
 import {Form, Modal} from 'react-bootstrap';
 import { CloseIcon, HeadingL, ButtonGen, ButtonUnable } from '../Styles/Global';

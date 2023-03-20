@@ -28,19 +28,17 @@ export default function UserProfile() {
 
   return (
     <StyledHome>
-      <StyledHome>
       <StyledUserProfile>  
         <CloseIcon style={{position:"relative", left:"40%"}} onClick={handleCancle}/>
         <h3>My profile</h3> 
         {user.map((user)=>(
           <div key={user._id} style={{ padding:"20px 0px 0px"}}>
-            <h4 style={{padding:"10px 0px"}}>Username: {user.username}</h4>
-            <h4 style={{padding:"10px 0px"}}>Baby's age: {user.babyAge}</h4>       
-            <h4 style={{padding:"10px 0px"}}>Location: {user.location}</h4>
+            <h5 style={{padding:"10px 0px"}}>Username: {user.username}</h5>
+            <h5 style={{padding:"10px 0px"}}>Baby's age: {user.babyAge}</h5>       
+            <h5 style={{padding:"10px 0px"}}>Location: {user.location}</h5>
           </div>
         ))}
       </StyledUserProfile>
-    </StyledHome>
     </StyledHome>
   )
 }

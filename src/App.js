@@ -5,11 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home'
 import Login from './components/Login';
 import Signup from './components/Signup';
-import ActHome from './components/Activity/ActHome'; 
-import ComHome from './components/Community/ComHome';
-import CreateAct from './components/Activity/CreateAct';
 import ActItem from './components/Activity/ActItem';
-import CreatePost from './components/Community/CreatePost';
 import UserProfile from './components/UserProfile';
 import GlobalStyles from './Styles/Global'
 import { ThemeProvider } from "styled-components";

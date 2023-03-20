@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import {v4 as uuidv4} from 'uuid';
-import { useNavigate } from 'react-router-dom';
-
 import {Form, Modal} from 'react-bootstrap';
 import { CloseIcon, HeadingL, ButtonGen, ButtonUnable } from '../../Styles/Global';
 
@@ -15,14 +13,9 @@ export default function CreatePost(props) {
         comments:[]
     })
 
-    const [infoElement, setInfoElement] = useState([])
     const [errTitle, setErrTitle] = useState("");
     const [createSucc, setCreateSucc] = useState(false);
 
-    const navigate = useNavigate();
-    const handleCancle=()=>{
-      navigate("/community")
-    }
     //handle share post
     const sharePost=(evt)=>{
         evt.preventDefault();
